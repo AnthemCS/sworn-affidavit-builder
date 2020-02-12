@@ -3,7 +3,7 @@
 
 // Bootstrap
 @import "~bootstrap/dist/css/bootstrap";
-
+// custom.scss
 // noty
 @import "~vuejs-noty/dist/vuejs-noty.css";
 
@@ -13,9 +13,11 @@ body {
 }
 
 // animation
-.fade-enter-active, .fade-leave-active {
-  transition: opacity .2s ease;
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.2s ease;
 }
-.fade-enter, .fade-leave-active {
+.fade-enter,
+.fade-leave-active {
   opacity: 0;
 }
