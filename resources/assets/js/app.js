@@ -1,58 +1,69 @@
-import $ from 'jquery';
-import Vue from 'vue';
-import VueNoty from 'vuejs-noty';
-import axios from 'axios';
+import $ from "jquery";
+import Vue from "vue";
+import VueNoty from "vuejs-noty";
+import axios from "axios";
+
+import { BootstrapVue, IconsPlugin } from "bootstrap-vue";
 
 window.$ = window.jQuery = $;
 window.axios = axios;
-require('bootstrap');
-
-Vue.use(VueNoty, {
-	progressBar: false,
-	layout: 'bottomRight',
-	theme: 'bootstrap-v4',
-	timeout: 3000
+require("bootstrap");
+-Vue.use(VueNoty, {
+  progressBar: false,
+  layout: "bottomRight",
+  theme: "bootstrap-v4",
+  timeout: 3000,
 });
 
-import router from './router';
-import store from './store/index';
-import App from './components/App.vue';
-import jwtToken from './helpers/jwt-token';
+// Install BootstrapVue
+Vue.use(BootstrapVue);
+// Optionally install the BootstrapVue icon components plugin
+Vue.use(IconsPlugin);
 
-axios.interceptors.request.use(config => {
-	config.headers['X-CSRF-TOKEN'] = window.Laravel.csrfToken;
-	config.headers['X-Requested-With'] = 'XMLHttpRequest';
+import router from "./router";
+import store from "./store/index";
+import App from "./components/App.vue";
+import jwtToken from "./helpers/jwt-token";
 
-	if (jwtToken.getToken()) {
-		config.headers['Authorization'] = 'Bearer ' + jwtToken.getToken();
-	}
+axios.interceptors.request.use(
+  config => {
+    config.headers["X-CSRF-TOKEN"] = window.Laravel.csrfToken;
+    config.headers["X-Requested-With"] = "XMLHttpRequest";
 
-	return config;
-}, error => {
-	return Promise.reject(error);
-});
+    if (jwtToken.getToken()) {
+      config.headers["Authorization"] = "Bearer " + jwtToken.getToken();
+    }
 
-axios.interceptors.response.use(response => {
-	return response;
-}, error => {
-	let errorResponseData = error.response.data;
+    return config;
+  },
+  error => {
+    return Promise.reject(error);
+  },
+);
 
-	const errors = ["token_invalid", "token_expired", "token_not_provided"];
+axios.interceptors.response.use(
+  response => {
+    return response;
+  },
+  error => {
+    let errorResponseData = error.response.data;
 
-	if (errorResponseData.error && errors.includes(errorResponseData.error)) {
-		store.dispatch('unsetAuthUser')
-			.then(() => {
-				jwtToken.removeToken();
-				router.push({name: 'login'});
-			});
-	}
+    const errors = ["token_invalid", "token_expired", "token_not_provided"];
 
-	return Promise.reject(error);
-});
+    if (errorResponseData.error && errors.includes(errorResponseData.error)) {
+      store.dispatch("unsetAuthUser").then(() => {
+        jwtToken.removeToken();
+        router.push({ name: "login" });
+      });
+    }
 
-Vue.component('app', App);
+    return Promise.reject(error);
+  },
+);
+
+Vue.component("app", App);
 
 const app = new Vue({
-	router,
-	store
-}).$mount('#app');
+  router,
+  store,
+}).$mount("#app");
