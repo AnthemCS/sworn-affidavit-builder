@@ -71717,6 +71717,34 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -71744,9 +71772,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         percentageBlackMilitaryVeterans: 0,
         financialYearEndAmount: 0,
         enterpriseOwnership: "100BlackOwnedFounderCEO",
-        email: "",
-        name: "",
-        food: null
+        consentFullName: "Name and Surname",
+        consentIdNumber: "000000-0000-000"
       },
       ownerShipOptions: [{ text: "100% Black Owned", value: "100BlackOwnedFounderCEO" }, { text: "At least 51% Black Owned", value: "51moreBlackOwned" }, { text: "Less than 51% Black Owned", value: "51LessBlackOwned" }],
       foods: [{ text: "Select One", value: null }, "Carrots", "Beans", "Tomatoes", "Corn"],
@@ -71764,9 +71791,24 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
       evt.preventDefault();
       // Reset our form values
-      this.form.email = "";
-      this.form.name = "";
-      this.form.food = null;
+      this.form.issueDate = "";
+      this.form.enterpriseName = "";
+      this.form.tradeName = "";
+      this.form.registrationNumber = "";
+      this.form.entityType = "";
+      this.form.physicalAddress = "";
+      this.form.percentageBlackOwnedEnterprise = 0;
+      this.form.percentageBlackFemaleOwnedEnterprise = 0;
+      this.form.percentageBlackDesignatedGroupEnterprise = 0;
+      this.form.percentageBlackYouth = 0;
+      this.form.percentageBlackDisabled = 0;
+      this.form.percentageBlackUnemployed = 0;
+      this.form.percentageBlackRuralAreas = 0;
+      this.form.percentageBlackMilitaryVeterans = 0;
+      this.form.financialYearEndAmount = 0;
+      this.form.enterpriseOwnership = "100BlackOwnedFounderCEO";
+      this.form.consentFullName = "Name and Surname";
+      this.form.consentIdNumber = "000000-0000-000";
       // Trick to reset/clear native browser form validation state
       this.show = false;
       this.$nextTick(function () {
@@ -72333,19 +72375,84 @@ var render = function() {
                     _vm._v(" "),
                     _c(
                       "b-form-group",
-                      { attrs: { label: "Inline radios (default)" } },
                       [
                         _c("b-form-radio-group", {
                           attrs: {
                             options: _vm.ownerShipOptions,
-                            name: "radio-inline"
+                            name: "radio-inline",
+                            stacked: ""
                           },
                           model: {
-                            value: _vm.enterpriseOwnership,
+                            value: _vm.form.enterpriseOwnership,
                             callback: function($$v) {
-                              _vm.enterpriseOwnership = $$v
+                              _vm.$set(_vm.form, "enterpriseOwnership", $$v)
                             },
-                            expression: "enterpriseOwnership"
+                            expression: "form.enterpriseOwnership"
+                          }
+                        })
+                      ],
+                      1
+                    )
+                  ],
+                  1
+                ),
+                _vm._v(" "),
+                _c(
+                  "fieldset",
+                  [
+                    _c("legend", [_vm._v("Section E - Consent")]),
+                    _vm._v(" "),
+                    _c(
+                      "b-form-group",
+                      {
+                        attrs: {
+                          id: "consent-name",
+                          label: "16. Name and Surname",
+                          "label-for": "consent-name"
+                        }
+                      },
+                      [
+                        _c("b-form-input", {
+                          attrs: {
+                            id: "trade-name",
+                            required: "",
+                            placeholder:
+                              "Enter a fullname with name and surname"
+                          },
+                          model: {
+                            value: _vm.form.consentFullName,
+                            callback: function($$v) {
+                              _vm.$set(_vm.form, "consentFullName", $$v)
+                            },
+                            expression: "form.consentFullName"
+                          }
+                        })
+                      ],
+                      1
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "b-form-group",
+                      {
+                        attrs: {
+                          id: "consent-idnumber",
+                          label: "17. ID Number",
+                          "label-for": "consent-idnumber"
+                        }
+                      },
+                      [
+                        _c("b-form-input", {
+                          attrs: {
+                            id: "trade-name",
+                            required: "",
+                            placeholder: "Enter a valid ID Number"
+                          },
+                          model: {
+                            value: _vm.form.consentIdNumber,
+                            callback: function($$v) {
+                              _vm.$set(_vm.form, "consentIdNumber", $$v)
+                            },
+                            expression: "form.consentIdNumber"
                           }
                         })
                       ],
@@ -72358,7 +72465,7 @@ var render = function() {
                 _c(
                   "b-button",
                   { attrs: { type: "submit", variant: "primary" } },
-                  [_vm._v("Submit")]
+                  [_vm._v("Generate And Print")]
                 ),
                 _vm._v(" "),
                 _c(
@@ -73448,6 +73555,14 @@ module.exports = function listToStyles (parentId, list) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_printd__ = __webpack_require__(368);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_printd___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_printd__);
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -73815,12 +73930,34 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 
+
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "DocumentPdf",
   props: {
     formData: {
       type: Object,
       required: true
+    }
+  },
+  data: function data() {
+    return {
+      printableCSS: "\n\n      @import \"https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css\"\n       body, html {\n        -webkit-print-color-adjust: exact;\n      }\n      span.cls_002 {\n  font-family: Arial, serif;\n  font-size: 15.1px;\n  color: rgb(229, 12, 128);\n  font-weight: bold;\n  font-style: normal;\n  text-decoration: none;\n}\ndiv.cls_002 {\n  font-family: Arial, serif;\n  font-size: 15.1px;\n  color: rgb(229, 12, 128);\n  font-weight: bold;\n  font-style: normal;\n  text-decoration: none;\n}\nspan.cls_003 {\n  font-family: Arial, serif;\n  font-size: 12.6px;\n  color: rgb(229, 12, 128);\n  font-weight: normal;\n  font-style: normal;\n  text-decoration: none;\n}\ndiv.cls_003 {\n  font-family: Arial, serif;\n  font-size: 12.6px;\n  color: rgb(229, 12, 128);\n  font-weight: normal;\n  font-style: normal;\n  text-decoration: none;\n}\nspan.cls_004 {\n  font-family: Arial, serif;\n  font-size: 12.1px;\n  color: rgb(229, 12, 128);\n  font-weight: bold;\n  font-style: normal;\n  text-decoration: none;\n}\ndiv.cls_004 {\n  font-family: Arial, serif;\n  font-size: 12.1px;\n  color: rgb(229, 12, 128);\n  font-weight: bold;\n  font-style: normal;\n  text-decoration: none;\n}\nspan.cls_018 {\n  font-family: Arial, serif;\n  font-size: 12.1px;\n  color: rgb(199, 199, 198);\n  font-weight: bold;\n  font-style: normal;\n  text-decoration: none;\n}\ndiv.cls_018 {\n  font-family: Arial, serif;\n  font-size: 12.1px;\n  color: rgb(199, 199, 198);\n  font-weight: bold;\n  font-style: normal;\n  text-decoration: none;\n}\nspan.cls_005 {\n  font-family: Arial, serif;\n  font-size: 9.1px;\n  color: rgb(229, 12, 128);\n  font-weight: normal;\n  font-style: normal;\n  text-decoration: none;\n}\ndiv.cls_005 {\n  font-family: Arial, serif;\n  font-size: 9.1px;\n  color: rgb(229, 12, 128);\n  font-weight: normal;\n  font-style: normal;\n  text-decoration: none;\n}\nspan.cls_006 {\n  font-family: Arial, serif;\n  font-size: 12.1px;\n  color: rgb(43, 42, 41);\n  font-weight: bold;\n  font-style: normal;\n  text-decoration: none;\n}\ndiv.cls_006 {\n  font-family: Arial, serif;\n  font-size: 12.1px;\n  color: rgb(43, 42, 41);\n  font-weight: bold;\n  font-style: normal;\n  text-decoration: none;\n}\nspan.cls_007 {\n  font-family: Arial, serif;\n  font-size: 10.1px;\n  color: rgb(43, 42, 41);\n  font-weight: bold;\n  font-style: normal;\n  text-decoration: none;\n}\ndiv.cls_007 {\n  font-family: Arial, serif;\n  font-size: 10.1px;\n  color: rgb(43, 42, 41);\n  font-weight: bold;\n  font-style: normal;\n  text-decoration: none;\n}\nspan.cls_008 {\n  font-family: Arial, serif;\n  font-size: 11.1px;\n  color: rgb(229, 12, 128);\n  font-weight: bold;\n  font-style: normal;\n  text-decoration: none;\n}\ndiv.cls_008 {\n  font-family: Arial, serif;\n  font-size: 11.1px;\n  color: rgb(229, 12, 128);\n  font-weight: bold;\n  font-style: normal;\n  text-decoration: none;\n}\nspan.cls_009 {\n  font-family: Arial, serif;\n  font-size: 10.1px;\n  color: rgb(229, 12, 128);\n  font-weight: normal;\n  font-style: normal;\n  text-decoration: none;\n}\ndiv.cls_009 {\n  font-family: Arial, serif;\n  font-size: 10.1px;\n  color: rgb(229, 12, 128);\n  font-weight: normal;\n  font-style: normal;\n  text-decoration: none;\n}\nspan.cls_010 {\n  font-family: Arial, serif;\n  font-size: 10.1px;\n  color: rgb(229, 12, 128);\n  font-weight: normal;\n  font-style: italic;\n  text-decoration: none;\n}\ndiv.cls_010 {\n  font-family: Arial, serif;\n  font-size: 10.1px;\n  color: rgb(229, 12, 128);\n  font-weight: normal;\n  font-style: italic;\n  text-decoration: none;\n}\nspan.cls_015 {\n  font-family: Arial, serif;\n  font-size: 10.1px;\n  color: rgb(229, 12, 128);\n  font-weight: bold;\n  font-style: normal;\n  text-decoration: none;\n}\ndiv.cls_015 {\n  font-family: Arial, serif;\n  font-size: 10.1px;\n  color: rgb(229, 12, 128);\n  font-weight: bold;\n  font-style: normal;\n  text-decoration: none;\n}\nspan.cls_011 {\n  font-family: Arial, serif;\n  font-size: 10.1px;\n  color: rgb(43, 42, 41);\n  font-weight: normal;\n  font-style: normal;\n  text-decoration: none;\n}\ndiv.cls_011 {\n  font-family: Arial, serif;\n  font-size: 10.1px;\n  color: rgb(43, 42, 41);\n  font-weight: normal;\n  font-style: normal;\n  text-decoration: none;\n}\nspan.cls_012 {\n  font-family: Arial, serif;\n  font-size: 11.1px;\n  color: rgb(43, 42, 41);\n  font-weight: bold;\n  font-style: normal;\n  text-decoration: none;\n}\ndiv.cls_012 {\n  font-family: Arial, serif;\n  font-size: 11.1px;\n  color: rgb(43, 42, 41);\n  font-weight: bold;\n  font-style: normal;\n  text-decoration: none;\n}\nspan.cls_014 {\n  font-family: Arial, serif;\n  font-size: 10.1px;\n  color: rgb(43, 42, 41);\n  font-weight: bold;\n  font-style: normal;\n  text-decoration: none;\n}\ndiv.cls_014 {\n  font-family: Arial, serif;\n  font-size: 10.1px;\n  color: rgb(43, 42, 41);\n  font-weight: bold;\n  font-style: normal;\n  text-decoration: none;\n}\nspan.cls_013 {\n  font-family: Arial, serif;\n  font-size: 10.1px;\n  color: rgb(229, 12, 128);\n  font-weight: bold;\n  font-style: normal;\n  text-decoration: none;\n}\ndiv.cls_013 {\n  font-family: Arial, serif;\n  font-size: 10.1px;\n  color: rgb(229, 12, 128);\n  font-weight: bold;\n  font-style: normal;\n  text-decoration: none;\n}\nspan.cls_016 {\n  font-family: Arial, serif;\n  font-size: 5px;\n  color: rgb(229, 12, 128);\n  font-weight: bold;\n  font-style: normal;\n  text-decoration: none;\n}\ndiv.cls_016 {\n  font-family: Arial, serif;\n  font-size: 5px;\n  color: rgb(229, 12, 128);\n  font-weight: bold;\n  font-style: normal;\n  text-decoration: none;\n}\nspan.cls_017 {\n  font-family: Arial, serif;\n  font-size: 5px;\n  color: rgb(229, 12, 128);\n  font-weight: normal;\n  font-style: normal;\n  text-decoration: none;\n}\ndiv.cls_017 {\n  font-family: Arial, serif;\n  font-size: 5px;\n  color: rgb(229, 12, 128);\n  font-weight: normal;\n  font-style: normal;\n  text-decoration: none;\n}\nspan.cls_019 {\n  font-family: Arial, serif;\n  font-size: 8.1px;\n  color: rgb(229, 12, 128);\n  font-weight: bold;\n  font-style: normal;\n  text-decoration: none;\n}\ndiv.cls_019 {\n  font-family: Arial, serif;\n  font-size: 8.1px;\n  color: rgb(229, 12, 128);\n  font-weight: bold;\n  font-style: normal;\n  text-decoration: none;\n}\n      "
+    };
+  },
+  mounted: function mounted() {
+    this.d = new __WEBPACK_IMPORTED_MODULE_0_printd__["Printd"]();
+  },
+
+  methods: {
+    generatePrint: function generatePrint() {
+      var _this = this;
+
+      axios.get("https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css").then(function (response) {
+        var bootstrapCss = response.data;
+        _this.d.print(_this.$refs.print, bootstrapCss + _this.printableCss);
+      });
+      this.d.print(this.$refs.print, this.printableCSS);
     }
   }
 });
@@ -73836,6 +73973,7 @@ var render = function() {
   return _c(
     "div",
     {
+      ref: "print",
       staticClass: "position-sticky",
       staticStyle: {
         position: "absolute",
@@ -74238,6 +74376,35 @@ var render = function() {
       _vm._v(" "),
       _vm._m(44),
       _vm._v(" "),
+      _c(
+        "div",
+        {
+          staticClass: "cls_013",
+          staticStyle: {
+            position: "absolute",
+            left: "193.03px",
+            top: "468.00px"
+          }
+        },
+        [
+          _c("span", { staticClass: "cls_013" }, [_vm._v("Level One")]),
+          _c("span", { staticClass: "cls_009" }, [
+            _vm._v(
+              "\n      " +
+                _vm._s(
+                  _vm.formData.enterpriseOwnership == "100BlackOwnedFounderCEO"
+                    ? "X"
+                    : ""
+                ) +
+                " "
+            )
+          ]),
+          _c("span", { staticClass: "cls_010" }, [
+            _vm._v("(135% B-BBEE procurement recognition level)")
+          ])
+        ]
+      ),
+      _vm._v(" "),
       _vm._m(45),
       _vm._v(" "),
       _vm._m(46),
@@ -74261,6 +74428,34 @@ var render = function() {
       _vm._m(55),
       _vm._v(" "),
       _vm._m(56),
+      _vm._v(" "),
+      _c(
+        "div",
+        {
+          staticClass: "cls_014",
+          staticStyle: {
+            position: "absolute",
+            left: "41.43px",
+            top: "584.03px"
+          }
+        },
+        [
+          _c("span", { staticClass: "cls_014" }, [
+            _vm._v(" " + _vm._s(_vm.formData.consentFullName) + " ")
+          ]),
+          _c("span", { staticClass: "cls_011" }),
+          _c("span", { staticClass: "cls_009" }, [
+            _vm._v("with identity number")
+          ]),
+          _c("span", { staticClass: "cls_011" }),
+          _c("span", { staticClass: "cls_014" }, [
+            _vm._v(" " + _vm._s(_vm.formData.consentIdNumber) + " ")
+          ]),
+          _c("span", { staticClass: "cls_009" }, [
+            _vm._v("hereby declare under oath as follows:")
+          ])
+        ]
+      ),
       _vm._v(" "),
       _vm._m(57),
       _vm._v(" "),
@@ -74288,11 +74483,7 @@ var render = function() {
       _vm._v(" "),
       _vm._m(69),
       _vm._v(" "),
-      _vm._m(70),
-      _vm._v(" "),
-      _vm._m(71),
-      _vm._v(" "),
-      _vm._m(72)
+      _vm._m(70)
     ]
   )
 }
@@ -74974,25 +75165,6 @@ var staticRenderFns = [
     return _c(
       "div",
       {
-        staticClass: "cls_013",
-        staticStyle: { position: "absolute", left: "193.03px", top: "468.00px" }
-      },
-      [
-        _c("span", { staticClass: "cls_013" }, [_vm._v("Level One")]),
-        _c("span", { staticClass: "cls_009" }),
-        _c("span", { staticClass: "cls_010" }, [
-          _vm._v("(135% B-BBEE procurement recognition level)")
-        ])
-      ]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      {
         staticClass: "cls_006",
         staticStyle: { position: "absolute", left: "563.03px", top: "465.96px" }
       },
@@ -75172,30 +75344,6 @@ var staticRenderFns = [
         staticStyle: { position: "absolute", left: "16.34px", top: "579.40px" }
       },
       [_c("span", { staticClass: "cls_006" }, [_vm._v("17")])]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      {
-        staticClass: "cls_014",
-        staticStyle: { position: "absolute", left: "41.43px", top: "584.03px" }
-      },
-      [
-        _c("span", { staticClass: "cls_014" }, [_vm._v("Name and Surname")]),
-        _c("span", { staticClass: "cls_011" }),
-        _c("span", { staticClass: "cls_009" }, [
-          _vm._v("with identity number")
-        ]),
-        _c("span", { staticClass: "cls_011" }),
-        _c("span", { staticClass: "cls_014" }, [_vm._v("800000 0000 000, ")]),
-        _c("span", { staticClass: "cls_009" }, [
-          _vm._v("hereby declare under oath as follows:")
-        ])
-      ]
     )
   },
   function() {
@@ -75459,6 +75607,178 @@ if (false) {
 /***/ (function(module, exports) {
 
 module.exports = "/images/background1.jpg?2996e7063afa2f79d451d580d51aa6e1";
+
+/***/ }),
+/* 368 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var URL_LONG = /^(((http[s]?)|file):)?(\/\/)+([0-9a-zA-Z-_.=?&].+)$/;
+var URL_SHORT = /^((\.|\.\.)?\/)([0-9a-zA-Z-_.=?&]+\/)*([0-9a-zA-Z-_.=?&]+)$/;
+var isValidURL = function (str) { return URL_LONG.test(str) || URL_SHORT.test(str); };
+function createStyle(doc, cssText) {
+    var style = doc.createElement('style');
+    style.type = 'text/css';
+    style.appendChild(window.document.createTextNode(cssText));
+    return style;
+}
+exports.createStyle = createStyle;
+function createLinkStyle(doc, url) {
+    var style = doc.createElement('link');
+    style.type = 'text/css';
+    style.rel = 'stylesheet';
+    style.href = url;
+    return style;
+}
+exports.createLinkStyle = createLinkStyle;
+function createIFrame(parent) {
+    var el = window.document.createElement('iframe');
+    var css = 'visibility:hidden;width:0;height:0;position:absolute;z-index:-9999;bottom:0;';
+    el.setAttribute('src', 'about:blank');
+    el.setAttribute('style', css);
+    el.setAttribute('width', '0');
+    el.setAttribute('height', '0');
+    el.setAttribute('wmode', 'opaque');
+    parent.appendChild(el);
+    return el;
+}
+exports.createIFrame = createIFrame;
+var DEFAULT_OPTIONS = {
+    parent: window.document.body,
+    headElements: [],
+    bodyElements: []
+};
+/** Printd class that prints HTML elements in a blank document */
+var Printd = /** @class */ (function () {
+    function Printd(options) {
+        this.isLoading = false;
+        this.hasEvents = false;
+        this.opts = Object.assign(DEFAULT_OPTIONS, (options || {}));
+        this.iframe = createIFrame(this.opts.parent);
+    }
+    /** Gets current Iframe reference */
+    Printd.prototype.getIFrame = function () {
+        return this.iframe;
+    };
+    /**
+     * Print an HTMLElement
+     *
+     * @param el HTMLElement
+     * @param styles Optional styles (css texts or urls) that will add to iframe document.head
+     * @param scripts Optional scripts (script texts or urls) that will add to iframe document.body
+     * @param callback Optional callback that will be triggered when content is ready to print
+     */
+    Printd.prototype.print = function (el, styles, scripts, callback) {
+        if (this.isLoading)
+            return;
+        var _a = this.iframe, contentDocument = _a.contentDocument, contentWindow = _a.contentWindow;
+        if (!contentDocument || !contentWindow)
+            return;
+        this.iframe.src = 'about:blank';
+        this.elCopy = el.cloneNode(true);
+        if (!this.elCopy)
+            return;
+        this.isLoading = true;
+        this.callback = callback;
+        var doc = contentWindow.document;
+        doc.open();
+        doc.write('<!DOCTYPE html><html><head><meta charset="utf-8"></head><body></body></html>');
+        this.addEvents();
+        // 1. append custom elements
+        var _b = this.opts, headElements = _b.headElements, bodyElements = _b.bodyElements;
+        // 1.1 append custom head elements
+        if (Array.isArray(headElements)) {
+            headElements.forEach(function (el) { return doc.head.appendChild(el); });
+        }
+        // 1.1 append custom body elements
+        if (Array.isArray(bodyElements)) {
+            bodyElements.forEach(function (el) { return doc.body.appendChild(el); });
+        }
+        // 2. append custom styles
+        if (Array.isArray(styles)) {
+            styles.forEach(function (value) {
+                if (value) {
+                    if (isValidURL(value)) {
+                        doc.head.appendChild(createLinkStyle(doc, value));
+                    }
+                    else {
+                        doc.head.appendChild(createStyle(doc, value));
+                    }
+                }
+            });
+        }
+        // 3. append element copy
+        doc.body.appendChild(this.elCopy);
+        // 4. append custom scripts
+        if (Array.isArray(scripts)) {
+            scripts.forEach(function (value) {
+                if (value) {
+                    var script = doc.createElement('script');
+                    if (isValidURL(value)) {
+                        script.src = value;
+                    }
+                    else {
+                        script.innerText = value;
+                    }
+                    doc.body.appendChild(script);
+                }
+            });
+        }
+        doc.close();
+    };
+    /**
+     * Print an URL
+     *
+     * @param url URL to print
+     * @param callback Optional callback that will be triggered when content is ready to print
+     */
+    Printd.prototype.printURL = function (url, callback) {
+        if (this.isLoading)
+            return;
+        this.addEvents();
+        this.isLoading = true;
+        this.callback = callback;
+        this.iframe.src = url;
+    };
+    Printd.prototype.launchPrint = function (contentWindow) {
+        var result = contentWindow.document.execCommand('print', false, null);
+        if (!result) {
+            contentWindow.print();
+        }
+    };
+    Printd.prototype.addEvents = function () {
+        var _this = this;
+        if (!this.hasEvents) {
+            this.hasEvents = true;
+            this.iframe.addEventListener('load', function () { return _this.onLoad(); }, false);
+        }
+    };
+    Printd.prototype.onLoad = function () {
+        var _this = this;
+        if (this.iframe) {
+            this.isLoading = false;
+            var _a = this.iframe, contentDocument = _a.contentDocument, contentWindow_1 = _a.contentWindow;
+            if (!contentDocument || !contentWindow_1)
+                return;
+            if (this.callback) {
+                this.callback({
+                    iframe: this.iframe,
+                    element: this.elCopy,
+                    launchPrint: function () { return _this.launchPrint(contentWindow_1); }
+                });
+            }
+            else {
+                this.launchPrint(contentWindow_1);
+            }
+        }
+    };
+    return Printd;
+}());
+exports.Printd = Printd;
+exports.default = Printd;
+
 
 /***/ })
 /******/ ]);
