@@ -4,7 +4,12 @@
       <document-pdf :form-data="form"></document-pdf>
     </div>
     <div class="col-12 offset-md-1 col-md-5">
-      <b-form @submit="onSubmit" @reset="onReset" v-if="show">
+      <b-form
+        @submit="onSubmit"
+        @reset="onReset"
+        :disabled="loading"
+        v-if="show"
+      >
         <fieldset>
           <legend>Section A - Measure Enterprise/Business Entity</legend>
           <b-form-group
@@ -228,31 +233,60 @@
               v-model="form.financialYearEndAmount"
               type="number"
               :min="0"
-              :max="100"
               required
             ></b-form-input>
           </b-form-group>
 
-          <b-form-group label="Inline radios (default)">
+          <b-form-group>
             <b-form-radio-group
-              v-model="enterpriseOwnership"
+              v-model="form.enterpriseOwnership"
               :options="ownerShipOptions"
               name="radio-inline"
+              stacked
             ></b-form-radio-group>
           </b-form-group>
         </fieldset>
+        <fieldset>
+          <legend>Section E - Consent</legend>
+          <b-form-group
+            id="consent-name"
+            label="16. Name and Surname"
+            label-for="consent-name"
+          >
+            <b-form-input
+              id="trade-name"
+              v-model="form.consentFullName"
+              required
+              placeholder="Enter a fullname with name and surname"
+            ></b-form-input>
+          </b-form-group>
+          <b-form-group
+            id="consent-idnumber"
+            label="17. ID Number"
+            label-for="consent-idnumber"
+          >
+            <b-form-input
+              id="trade-name"
+              v-model="form.consentIdNumber"
+              required
+              placeholder="Enter a valid ID Number"
+            ></b-form-input>
+          </b-form-group>
+        </fieldset>
 
-        <b-button type="submit" variant="primary">Submit</b-button>
+        <b-button type="submit" variant="primary">Generate And Print</b-button>
         <b-button type="reset" variant="danger">Reset</b-button>
       </b-form>
       <!-- <b-card class="mt-3" header="Form Data Result">
         <pre class="m-0">{{ form }}</pre>
-      </b-card> -->
+      </b-card>-->
     </div>
   </div>
 </template>
 
 <script>
+import axios from "axios";
+import { api } from "../../config";
 import DocumentPdf from "./DocumentPdf";
 
 export default {
@@ -279,36 +313,61 @@ export default {
         percentageBlackMilitaryVeterans: 0,
         financialYearEndAmount: 0,
         enterpriseOwnership: "100BlackOwnedFounderCEO",
-        email: "",
-        name: "",
-        food: null,
+        consentFullName: "Name and Surname",
+        consentIdNumber: "000000-0000-000",
       },
       ownerShipOptions: [
         { text: "100% Black Owned", value: "100BlackOwnedFounderCEO" },
         { text: "At least 51% Black Owned", value: "51moreBlackOwned" },
         { text: "Less than 51% Black Owned", value: "51LessBlackOwned" },
       ],
-      foods: [
-        { text: "Select One", value: null },
-        "Carrots",
-        "Beans",
-        "Tomatoes",
-        "Corn",
-      ],
       show: true,
+      loading: false,
+      linktoFile: null,
     };
   },
   methods: {
     onSubmit(evt) {
       evt.preventDefault();
-      alert(JSON.stringify(this.form));
+      this.loading = true;
+      axios
+        .post(api.documentBuilder, this.form)
+        .then(({ data }) => {
+          this.linktoFile = data.url;
+          this.$noty.success(data.message);
+          this.$store.commit(
+            "documentbuilder/GET_FILE_VIEW_URL",
+            this.linktoFile,
+          );
+          this.$router.push({ name: "documentViewer" });
+          this.loading = false;
+        })
+        .catch(err => {
+          err.response.data.error && this.$noty.error(err.response.data.error);
+          console.error(err);
+        });
     },
     onReset(evt) {
       evt.preventDefault();
       // Reset our form values
-      this.form.email = "";
-      this.form.name = "";
-      this.form.food = null;
+      this.form.issueDate = "";
+      this.form.enterpriseName = "";
+      this.form.tradeName = "";
+      this.form.registrationNumber = "";
+      this.form.entityType = "";
+      this.form.physicalAddress = "";
+      this.form.percentageBlackOwnedEnterprise = 0;
+      this.form.percentageBlackFemaleOwnedEnterprise = 0;
+      this.form.percentageBlackDesignatedGroupEnterprise = 0;
+      this.form.percentageBlackYouth = 0;
+      this.form.percentageBlackDisabled = 0;
+      this.form.percentageBlackUnemployed = 0;
+      this.form.percentageBlackRuralAreas = 0;
+      this.form.percentageBlackMilitaryVeterans = 0;
+      this.form.financialYearEndAmount = 0;
+      this.form.enterpriseOwnership = "100BlackOwnedFounderCEO";
+      this.form.consentFullName = "Name and Surname";
+      this.form.consentIdNumber = "000000-0000-000";
       // Trick to reset/clear native browser form validation state
       this.show = false;
       this.$nextTick(() => {

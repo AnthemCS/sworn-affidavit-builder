@@ -1,6 +1,7 @@
 <template>
   <div
     class="position-sticky"
+    ref="print"
     style="position:absolute;left:50%;margin-left:-297px;top:0px;width:595px;height:841px;border-style:outset;overflow:hidden"
   >
     <div style="position:absolute;left:0px;top:0px">
@@ -232,7 +233,11 @@
       <span class="cls_009">100% Black Owned</span>
     </div>
     <div style="position:absolute;left:193.03px;top:468.00px" class="cls_013">
-      <span class="cls_013">Level One</span><span class="cls_009"> </span
+      <span class="cls_013">Level One</span
+      ><span class="cls_009">
+        {{
+          formData.enterpriseOwnership == "100BlackOwnedFounderCEO" ? "X" : ""
+        }} </span
       ><span class="cls_010">(135% B-BBEE procurement recognition level)</span>
     </div>
     <div style="position:absolute;left:563.03px;top:465.96px" class="cls_006">
@@ -280,10 +285,11 @@
       <span class="cls_006">17</span>
     </div>
     <div style="position:absolute;left:41.43px;top:584.03px" class="cls_014">
-      <span class="cls_014">Name and Surname</span><span class="cls_011"> </span
+      <span class="cls_014"> {{ formData.consentFullName }} </span
+      ><span class="cls_011"> </span
       ><span class="cls_009">with identity number</span
       ><span class="cls_011"> </span
-      ><span class="cls_014">800000 0000 000, </span
+      ><span class="cls_014"> {{ formData.consentIdNumber }} </span
       ><span class="cls_009">hereby declare under oath as follows:</span>
     </div>
     <div style="position:absolute;left:41.43px;top:610.03px" class="cls_009">
@@ -365,12 +371,329 @@
   </div>
 </template>
 <script>
+import { Printd } from "printd";
+
 export default {
   name: "DocumentPdf",
   props: {
     formData: {
       type: Object,
       required: true,
+    },
+  },
+  data() {
+    return {
+      printableCSS: `
+
+      @import "https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+       body, html {
+        -webkit-print-color-adjust: exact;
+      }
+      span.cls_002 {
+  font-family: Arial, serif;
+  font-size: 15.1px;
+  color: rgb(229, 12, 128);
+  font-weight: bold;
+  font-style: normal;
+  text-decoration: none;
+}
+div.cls_002 {
+  font-family: Arial, serif;
+  font-size: 15.1px;
+  color: rgb(229, 12, 128);
+  font-weight: bold;
+  font-style: normal;
+  text-decoration: none;
+}
+span.cls_003 {
+  font-family: Arial, serif;
+  font-size: 12.6px;
+  color: rgb(229, 12, 128);
+  font-weight: normal;
+  font-style: normal;
+  text-decoration: none;
+}
+div.cls_003 {
+  font-family: Arial, serif;
+  font-size: 12.6px;
+  color: rgb(229, 12, 128);
+  font-weight: normal;
+  font-style: normal;
+  text-decoration: none;
+}
+span.cls_004 {
+  font-family: Arial, serif;
+  font-size: 12.1px;
+  color: rgb(229, 12, 128);
+  font-weight: bold;
+  font-style: normal;
+  text-decoration: none;
+}
+div.cls_004 {
+  font-family: Arial, serif;
+  font-size: 12.1px;
+  color: rgb(229, 12, 128);
+  font-weight: bold;
+  font-style: normal;
+  text-decoration: none;
+}
+span.cls_018 {
+  font-family: Arial, serif;
+  font-size: 12.1px;
+  color: rgb(199, 199, 198);
+  font-weight: bold;
+  font-style: normal;
+  text-decoration: none;
+}
+div.cls_018 {
+  font-family: Arial, serif;
+  font-size: 12.1px;
+  color: rgb(199, 199, 198);
+  font-weight: bold;
+  font-style: normal;
+  text-decoration: none;
+}
+span.cls_005 {
+  font-family: Arial, serif;
+  font-size: 9.1px;
+  color: rgb(229, 12, 128);
+  font-weight: normal;
+  font-style: normal;
+  text-decoration: none;
+}
+div.cls_005 {
+  font-family: Arial, serif;
+  font-size: 9.1px;
+  color: rgb(229, 12, 128);
+  font-weight: normal;
+  font-style: normal;
+  text-decoration: none;
+}
+span.cls_006 {
+  font-family: Arial, serif;
+  font-size: 12.1px;
+  color: rgb(43, 42, 41);
+  font-weight: bold;
+  font-style: normal;
+  text-decoration: none;
+}
+div.cls_006 {
+  font-family: Arial, serif;
+  font-size: 12.1px;
+  color: rgb(43, 42, 41);
+  font-weight: bold;
+  font-style: normal;
+  text-decoration: none;
+}
+span.cls_007 {
+  font-family: Arial, serif;
+  font-size: 10.1px;
+  color: rgb(43, 42, 41);
+  font-weight: bold;
+  font-style: normal;
+  text-decoration: none;
+}
+div.cls_007 {
+  font-family: Arial, serif;
+  font-size: 10.1px;
+  color: rgb(43, 42, 41);
+  font-weight: bold;
+  font-style: normal;
+  text-decoration: none;
+}
+span.cls_008 {
+  font-family: Arial, serif;
+  font-size: 11.1px;
+  color: rgb(229, 12, 128);
+  font-weight: bold;
+  font-style: normal;
+  text-decoration: none;
+}
+div.cls_008 {
+  font-family: Arial, serif;
+  font-size: 11.1px;
+  color: rgb(229, 12, 128);
+  font-weight: bold;
+  font-style: normal;
+  text-decoration: none;
+}
+span.cls_009 {
+  font-family: Arial, serif;
+  font-size: 10.1px;
+  color: rgb(229, 12, 128);
+  font-weight: normal;
+  font-style: normal;
+  text-decoration: none;
+}
+div.cls_009 {
+  font-family: Arial, serif;
+  font-size: 10.1px;
+  color: rgb(229, 12, 128);
+  font-weight: normal;
+  font-style: normal;
+  text-decoration: none;
+}
+span.cls_010 {
+  font-family: Arial, serif;
+  font-size: 10.1px;
+  color: rgb(229, 12, 128);
+  font-weight: normal;
+  font-style: italic;
+  text-decoration: none;
+}
+div.cls_010 {
+  font-family: Arial, serif;
+  font-size: 10.1px;
+  color: rgb(229, 12, 128);
+  font-weight: normal;
+  font-style: italic;
+  text-decoration: none;
+}
+span.cls_015 {
+  font-family: Arial, serif;
+  font-size: 10.1px;
+  color: rgb(229, 12, 128);
+  font-weight: bold;
+  font-style: normal;
+  text-decoration: none;
+}
+div.cls_015 {
+  font-family: Arial, serif;
+  font-size: 10.1px;
+  color: rgb(229, 12, 128);
+  font-weight: bold;
+  font-style: normal;
+  text-decoration: none;
+}
+span.cls_011 {
+  font-family: Arial, serif;
+  font-size: 10.1px;
+  color: rgb(43, 42, 41);
+  font-weight: normal;
+  font-style: normal;
+  text-decoration: none;
+}
+div.cls_011 {
+  font-family: Arial, serif;
+  font-size: 10.1px;
+  color: rgb(43, 42, 41);
+  font-weight: normal;
+  font-style: normal;
+  text-decoration: none;
+}
+span.cls_012 {
+  font-family: Arial, serif;
+  font-size: 11.1px;
+  color: rgb(43, 42, 41);
+  font-weight: bold;
+  font-style: normal;
+  text-decoration: none;
+}
+div.cls_012 {
+  font-family: Arial, serif;
+  font-size: 11.1px;
+  color: rgb(43, 42, 41);
+  font-weight: bold;
+  font-style: normal;
+  text-decoration: none;
+}
+span.cls_014 {
+  font-family: Arial, serif;
+  font-size: 10.1px;
+  color: rgb(43, 42, 41);
+  font-weight: bold;
+  font-style: normal;
+  text-decoration: none;
+}
+div.cls_014 {
+  font-family: Arial, serif;
+  font-size: 10.1px;
+  color: rgb(43, 42, 41);
+  font-weight: bold;
+  font-style: normal;
+  text-decoration: none;
+}
+span.cls_013 {
+  font-family: Arial, serif;
+  font-size: 10.1px;
+  color: rgb(229, 12, 128);
+  font-weight: bold;
+  font-style: normal;
+  text-decoration: none;
+}
+div.cls_013 {
+  font-family: Arial, serif;
+  font-size: 10.1px;
+  color: rgb(229, 12, 128);
+  font-weight: bold;
+  font-style: normal;
+  text-decoration: none;
+}
+span.cls_016 {
+  font-family: Arial, serif;
+  font-size: 5px;
+  color: rgb(229, 12, 128);
+  font-weight: bold;
+  font-style: normal;
+  text-decoration: none;
+}
+div.cls_016 {
+  font-family: Arial, serif;
+  font-size: 5px;
+  color: rgb(229, 12, 128);
+  font-weight: bold;
+  font-style: normal;
+  text-decoration: none;
+}
+span.cls_017 {
+  font-family: Arial, serif;
+  font-size: 5px;
+  color: rgb(229, 12, 128);
+  font-weight: normal;
+  font-style: normal;
+  text-decoration: none;
+}
+div.cls_017 {
+  font-family: Arial, serif;
+  font-size: 5px;
+  color: rgb(229, 12, 128);
+  font-weight: normal;
+  font-style: normal;
+  text-decoration: none;
+}
+span.cls_019 {
+  font-family: Arial, serif;
+  font-size: 8.1px;
+  color: rgb(229, 12, 128);
+  font-weight: bold;
+  font-style: normal;
+  text-decoration: none;
+}
+div.cls_019 {
+  font-family: Arial, serif;
+  font-size: 8.1px;
+  color: rgb(229, 12, 128);
+  font-weight: bold;
+  font-style: normal;
+  text-decoration: none;
+}
+      `,
+    };
+  },
+  mounted() {
+    this.d = new Printd();
+  },
+  methods: {
+    generatePrint() {
+      axios
+        .get(
+          "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css",
+        )
+        .then(response => {
+          const bootstrapCss = response.data;
+          this.d.print(this.$refs.print, bootstrapCss + this.printableCss);
+        });
+      this.d.print(this.$refs.print, this.printableCSS);
     },
   },
 };

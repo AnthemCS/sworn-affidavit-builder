@@ -14,3 +14,9 @@
 Route::any('{all}', function () {
     return view('app');
 })->where(['all' => '.*']);
+
+Route::get('affidavit', function(){
+    return json_encode(["message" => "View Affidavit"]);
+});
+
+

@@ -10,4 +10,6 @@ export default {
     percentageBlackFemaleOwnedEnterprise: "",
     percentageBlackDesignatedGroupEnterprise: "",
   },
+
+  fileViewUrl: null,
 };
