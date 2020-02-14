@@ -1,0 +1,1 @@
+export const GET_FILE_VIEW_URL = "GET_FILE_VIEW_URL";

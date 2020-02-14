@@ -38,11 +38,15 @@ class DocumentBuilderController extends Controller
     {
         //
         $data = $request->all();
+        $path = storage_path().'/'.date('yy-m-d').'-'.md5(time()).'_sworn_affidavit.pdf';
         $pdf = PDF::loadView('document.affidavit_template', $data)
-                ->save(storage_path().'/'.date('yy-m-d').'-'.md5(time()).'_sworn_affidavit.pdf')
+                ->save($path)
                 ->stream('sworn_affidavit.pdf');
-        dd($pdf);
-        return response()->json(["message" => "Pdf successfully generated!"]);
+        
+        return response()->json([
+            "message" => "Affidavit PDF Successfully Generated!",
+            "url" => $path
+            ]);
     }
 
     /**
