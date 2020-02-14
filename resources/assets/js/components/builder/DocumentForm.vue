@@ -7,11 +7,7 @@
       <b-form @submit="onSubmit" @reset="onReset" v-if="show">
         <fieldset>
           <legend>Section A - Measure Enterprise/Business Entity</legend>
-          <b-form-group
-            id="date-issue"
-            label="1. Date of Issue:"
-            label-for="date-issue"
-          >
+          <b-form-group id="date-issue" label="1. Date of Issue:" label-for="date-issue">
             <b-form-input
               id="date-issue"
               v-model="form.issueDate"
@@ -52,11 +48,7 @@
             label="4. Registration Number:"
             label-for="registration-number"
           >
-            <b-form-input
-              id="registration-number"
-              v-model="form.registrationNumber"
-              required
-            ></b-form-input>
+            <b-form-input id="registration-number" v-model="form.registrationNumber" required></b-form-input>
           </b-form-group>
           <b-form-group
             id="entity-type"
@@ -70,11 +62,7 @@
               placeholder="Enter the type of entity"
             ></b-form-input>
           </b-form-group>
-          <b-form-group
-            id="physical-addr"
-            label="6. Physical Address"
-            label-for="physical-addr"
-          >
+          <b-form-group id="physical-addr" label="6. Physical Address" label-for="physical-addr">
             <b-form-textarea
               id="physical-addr"
               v-model="form.physicalAddress"
@@ -228,7 +216,6 @@
               v-model="form.financialYearEndAmount"
               type="number"
               :min="0"
-              :max="100"
               required
             ></b-form-input>
           </b-form-group>
@@ -244,11 +231,7 @@
         </fieldset>
         <fieldset>
           <legend>Section E - Consent</legend>
-          <b-form-group
-            id="consent-name"
-            label="16. Name and Surname"
-            label-for="consent-name"
-          >
+          <b-form-group id="consent-name" label="16. Name and Surname" label-for="consent-name">
             <b-form-input
               id="trade-name"
               v-model="form.consentFullName"
@@ -256,11 +239,7 @@
               placeholder="Enter a fullname with name and surname"
             ></b-form-input>
           </b-form-group>
-          <b-form-group
-            id="consent-idnumber"
-            label="17. ID Number"
-            label-for="consent-idnumber"
-          >
+          <b-form-group id="consent-idnumber" label="17. ID Number" label-for="consent-idnumber">
             <b-form-input
               id="trade-name"
               v-model="form.consentIdNumber"
@@ -275,18 +254,20 @@
       </b-form>
       <!-- <b-card class="mt-3" header="Form Data Result">
         <pre class="m-0">{{ form }}</pre>
-      </b-card> -->
+      </b-card>-->
     </div>
   </div>
 </template>
 
 <script>
+import axios from "axios";
+import { api } from "../../config";
 import DocumentPdf from "./DocumentPdf";
 
 export default {
   name: "DocumentForm",
   components: {
-    DocumentPdf,
+    DocumentPdf
   },
   data() {
     return {
@@ -308,27 +289,35 @@ export default {
         financialYearEndAmount: 0,
         enterpriseOwnership: "100BlackOwnedFounderCEO",
         consentFullName: "Name and Surname",
-        consentIdNumber: "000000-0000-000",
+        consentIdNumber: "000000-0000-000"
       },
       ownerShipOptions: [
         { text: "100% Black Owned", value: "100BlackOwnedFounderCEO" },
         { text: "At least 51% Black Owned", value: "51moreBlackOwned" },
-        { text: "Less than 51% Black Owned", value: "51LessBlackOwned" },
+        { text: "Less than 51% Black Owned", value: "51LessBlackOwned" }
       ],
       foods: [
         { text: "Select One", value: null },
         "Carrots",
         "Beans",
         "Tomatoes",
-        "Corn",
+        "Corn"
       ],
-      show: true,
+      show: true
     };
   },
   methods: {
     onSubmit(evt) {
       evt.preventDefault();
-      alert(JSON.stringify(this.form));
+      axios
+        .post(api.documentBuilder, this.form)
+        .then(({ data }) => {
+          this.$noty.success(data.message);
+        })
+        .catch(err => {
+          err.response.data.error && this.$noty.error(err.response.data.error);
+          console.error(err);
+        });
     },
     onReset(evt) {
       evt.preventDefault();
@@ -356,7 +345,7 @@ export default {
       this.$nextTick(() => {
         this.show = true;
       });
-    },
-  },
+    }
+  }
 };
 </script>
