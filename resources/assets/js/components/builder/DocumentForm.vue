@@ -4,7 +4,12 @@
       <document-pdf :form-data="form"></document-pdf>
     </div>
     <div class="col-12 offset-md-1 col-md-5">
-      <b-form @submit="onSubmit" @reset="onReset" v-if="show">
+      <b-form
+        @submit="onSubmit"
+        @reset="onReset"
+        :disabled="loading"
+        v-if="show"
+      >
         <fieldset>
           <legend>Section A - Measure Enterprise/Business Entity</legend>
           <b-form-group
@@ -228,7 +233,6 @@
               v-model="form.financialYearEndAmount"
               type="number"
               :min="0"
-              :max="100"
               required
             ></b-form-input>
           </b-form-group>
@@ -275,12 +279,14 @@
       </b-form>
       <!-- <b-card class="mt-3" header="Form Data Result">
         <pre class="m-0">{{ form }}</pre>
-      </b-card> -->
+      </b-card>-->
     </div>
   </div>
 </template>
 
 <script>
+import axios from "axios";
+import { api } from "../../config";
 import DocumentPdf from "./DocumentPdf";
 
 export default {
@@ -315,20 +321,31 @@ export default {
         { text: "At least 51% Black Owned", value: "51moreBlackOwned" },
         { text: "Less than 51% Black Owned", value: "51LessBlackOwned" },
       ],
-      foods: [
-        { text: "Select One", value: null },
-        "Carrots",
-        "Beans",
-        "Tomatoes",
-        "Corn",
-      ],
       show: true,
+      loading: false,
+      linktoFile: null,
     };
   },
   methods: {
     onSubmit(evt) {
       evt.preventDefault();
-      alert(JSON.stringify(this.form));
+      this.loading = true;
+      axios
+        .post(api.documentBuilder, this.form)
+        .then(({ data }) => {
+          this.linktoFile = data.url;
+          this.$noty.success(data.message);
+          this.$store.commit(
+            "documentbuilder/GET_FILE_VIEW_URL",
+            this.linktoFile,
+          );
+          this.$router.push({ name: "documentViewer" });
+          this.loading = false;
+        })
+        .catch(err => {
+          err.response.data.error && this.$noty.error(err.response.data.error);
+          console.error(err);
+        });
     },
     onReset(evt) {
       evt.preventDefault();

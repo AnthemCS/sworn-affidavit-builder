@@ -6,6 +6,8 @@ import EditProfile from "./components/profile/edit-profile/EditProfile.vue";
 import EditPassword from "./components/profile/edit-password/EditPassword.vue";
 import DocumentBuilder from "./components/builder/DocumentBuilder";
 import DocumentList from "./components/builder/DocumentList";
+import DocumentViewer from "./components/builder/DocumentViewer";
+
 export default [
   {
     path: "/",
@@ -57,6 +59,12 @@ export default [
         path: "",
         name: "documentList",
         component: DocumentList,
+        meta: { requiresAuth: true },
+      },
+      {
+        path: "viewer",
+        name: "documentViewer",
+        component: DocumentViewer,
         meta: { requiresAuth: true },
       },
     ],
