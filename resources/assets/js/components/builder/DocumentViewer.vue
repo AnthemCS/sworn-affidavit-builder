@@ -5,15 +5,18 @@
       <a href="/document-builder" class="alert-link">Create Document here</a>
     </div>
     <div v-else class="alert alert-primary" role="alert">
-      <strong>View Documents here!</strong>
-      <a target="_blank" @click="linkExternal" class="alert-link">Link</a>
+      <strong>View Documents here!</strong> |
+      <a target="_blank" @click="linkExternal" class="alert-link ">Link</a>
       {{ fileViewUrl }}
     </div>
   </div>
 </template>
 
 <script>
+import axios from "axios";
 import { mapState } from "vuex";
+import { api } from "../../config";
+
 export default {
   name: "DocumentViewer",
   computed: {
@@ -22,7 +25,6 @@ export default {
   methods: {
     linkExternal(evt) {
       evt.preventDefault();
-      window.location.href = this.fileViewUrl;
     },
   },
 };
