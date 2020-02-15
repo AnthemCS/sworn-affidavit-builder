@@ -330,8 +330,12 @@ export default {
     onSubmit(evt) {
       evt.preventDefault();
       this.loading = true;
-      axios
-        .post(api.documentBuilder, this.form)
+      axios({
+        url: api.documentBuilder,
+        method: "post",
+        data: this.form,
+        responseType: "blob",
+      })
         .then(({ data }) => {
           this.linktoFile = data.url;
           this.$noty.success(data.message);
@@ -339,8 +343,16 @@ export default {
             "documentbuilder/GET_FILE_VIEW_URL",
             this.linktoFile,
           );
-          this.$router.push({ name: "documentViewer" });
-          this.loading = false;
+          var fileURL = window.URL.createObjectURL(new Blob([data]));
+          var fileLink = document.createElement("a");
+          fileLink.href = fileURL;
+          fileLink.setAttribute(
+            "download",
+            new Date() + "_sworn-affidavit.pdf",
+          );
+          document.body.appendChild(fileLink);
+
+          fileLink.click();
         })
         .catch(err => {
           err.response.data.error && this.$noty.error(err.response.data.error);

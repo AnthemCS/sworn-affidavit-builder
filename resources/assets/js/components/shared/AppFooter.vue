@@ -5,9 +5,10 @@
       &copy;
       <span v-once>{{ siteName }}</span>
       <span v-once>
-        {{ currentYear }},
-        developed by
-        <a href="http://github.com/anindya-dhruba" target="_blank">Anthem Creative Studios</a>
+        {{ currentYear }}, developed by
+        <a href="http://anthemcs.co.za" target="_blank"
+          >Anthem Creative Studios</a
+        >
       </span>
     </div>
   </footer>
@@ -20,8 +21,8 @@ export default {
   data() {
     return {
       siteName: siteName,
-      currentYear: new Date().getFullYear()
+      currentYear: new Date().getFullYear(),
     };
-  }
+  },
 };
 </script>

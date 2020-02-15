@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use PDF;
+use Mail;
 
 class DocumentBuilderController extends Controller
 {
@@ -38,15 +39,17 @@ class DocumentBuilderController extends Controller
     {
         //
         $data = $request->all();
-        $path = storage_path().'/'.date('yy-m-d').'-'.md5(time()).'_sworn_affidavit.pdf';
-        $pdf = PDF::loadView('document.affidavit_template', $data)
-                ->save($path)
-                ->stream('sworn_affidavit.pdf');
+        $pathToFile = storage_path().'/'.date('yy-m-d').'-'.md5(time()).'_sworn_affidavit.pdf';
+        $pdf = PDF::loadView('document.affidavit_template', $data);
+               
         
-        return response()->json([
-            "message" => "Affidavit PDF Successfully Generated!",
-            "url" => $path
-            ]);
+        // Mail::send('emails.document_email', ["pdf" => $pdf], function ($m) use ($pdf) {
+        //     $m->from('anthemcreativestudios@gmail.com', 'AnthemCS');
+        //     $m->attach($pdf, ['mime' => 'application/pdf']);
+        //     $m->to('drmosena@gmail.com')->subject('Your Document from Us');
+        // });
+
+        return $pdf->download($pathToFile);
     }
 
     /**
@@ -55,9 +58,10 @@ class DocumentBuilderController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($pathToFile)
     {
         //
+
     }
 
     /**

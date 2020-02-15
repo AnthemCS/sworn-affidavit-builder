@@ -20,5 +20,7 @@ Route::group(['middleware' => 'jwt.auth'], function()
     Route::post('user/password/update', 'UserController@updatePassword');
 
     Route::post('documentbuilder/store', 'DocumentBuilderController@store');
+    Route::post('documentbuilder/show', 'DocumentBuilderController@show');
+
 });
 
