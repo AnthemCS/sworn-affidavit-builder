@@ -71869,14 +71869,24 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
       evt.preventDefault();
       this.loading = true;
-      __WEBPACK_IMPORTED_MODULE_0_axios___default.a.post(__WEBPACK_IMPORTED_MODULE_1__config__["a" /* api */].documentBuilder, this.form).then(function (_ref) {
+      __WEBPACK_IMPORTED_MODULE_0_axios___default()({
+        url: __WEBPACK_IMPORTED_MODULE_1__config__["a" /* api */].documentBuilder,
+        method: "post",
+        data: this.form,
+        responseType: "blob"
+      }).then(function (_ref) {
         var data = _ref.data;
 
         _this.linktoFile = data.url;
         _this.$noty.success(data.message);
         _this.$store.commit("documentbuilder/GET_FILE_VIEW_URL", _this.linktoFile);
-        _this.$router.push({ name: "documentViewer" });
-        _this.loading = false;
+        var fileURL = window.URL.createObjectURL(new Blob([data]));
+        var fileLink = document.createElement("a");
+        fileLink.href = fileURL;
+        fileLink.setAttribute("download", new Date() + "_sworn-affidavit.pdf");
+        document.body.appendChild(fileLink);
+
+        fileLink.click();
       }).catch(function (err) {
         err.response.data.error && _this.$noty.error(err.response.data.error);
         console.error(err);
@@ -75339,7 +75349,10 @@ module.exports = Component.exports
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vuex__ = __webpack_require__(27);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(105);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_axios__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vuex__ = __webpack_require__(27);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__config__ = __webpack_require__(28);
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 //
@@ -75358,13 +75371,15 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 
 
+
+
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "DocumentViewer",
-  computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["d" /* mapState */])("documentbuilder", ["fileViewUrl"])),
+  computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_1_vuex__["d" /* mapState */])("documentbuilder", ["fileViewUrl"])),
   methods: {
     linkExternal: function linkExternal(evt) {
       evt.preventDefault();
-      window.location.href = this.fileViewUrl;
     }
   }
 });
@@ -75400,11 +75415,11 @@ var render = function() {
           { staticClass: "alert alert-primary", attrs: { role: "alert" } },
           [
             _c("strong", [_vm._v("View Documents here!")]),
-            _vm._v(" "),
+            _vm._v(" |\n    "),
             _c(
               "a",
               {
-                staticClass: "alert-link",
+                staticClass: "alert-link ",
                 attrs: { target: "_blank" },
                 on: { click: _vm.linkExternal }
               },
@@ -75907,6 +75922,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 
 
@@ -75950,16 +75966,10 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("span", [
-      _vm._v(
-        "\n      " + _vm._s(_vm.currentYear) + ",\n      developed by\n      "
-      ),
-      _c(
-        "a",
-        {
-          attrs: { href: "http://github.com/anindya-dhruba", target: "_blank" }
-        },
-        [_vm._v("Anthem Creative Studios")]
-      )
+      _vm._v("\n      " + _vm._s(_vm.currentYear) + ", developed by\n      "),
+      _c("a", { attrs: { href: "http://anthemcs.co.za", target: "_blank" } }, [
+        _vm._v("Anthem Creative Studios")
+      ])
     ])
   }
 ]
