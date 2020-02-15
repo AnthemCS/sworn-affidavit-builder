@@ -31,7 +31,7 @@ div.cls_013{font-family:Arial,serif;font-size:5.0px;color:rgb(34,31,32);font-wei
 <body>
 <div style="position:absolute;left:50%;margin-left:-297px;top:0px;width:595px;height:841px;border-style:outset;overflow:hidden">
 <div style="position:absolute;left:0px;top:0px">
-<img src="{{ storage_path()."/app/public/images/background1.jpg" }}" width=595 height=841></div>
+<img src="{{ 'images/background2.jpg' }}" width=595 height=841></div>
 <div style="position:absolute;left:234.92px;top:37.31px" class="cls_002"><span class="cls_002">SWORN AFFIDAVIT</span></div>
 <div style="position:absolute;left:207.72px;top:54.92px" class="cls_003"><span class="cls_003">B-BBEE Exempted Micro Enterprise</span></div>
 <div style="position:absolute;left:272.38px;top:72.98px" class="cls_004"><span class="cls_004">GENERAL</span></div>
