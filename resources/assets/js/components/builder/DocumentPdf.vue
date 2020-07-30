@@ -1,373 +1,460 @@
 <template>
-  <div
-    class="position-sticky"
-    ref="print"
-    style="position:absolute;left:50%;margin-left:-297px;top:0px;width:595px;height:841px;border-style:outset;overflow:hidden"
-  >
-    <div style="position:absolute;left:0px;top:0px">
-      <img src="./../../images/background1.jpg" width="595" height="841" />
-    </div>
-
-    <div style="position:absolute;left:234.92px;top:37.31px" class="cls_002">
-      <span class="cls_002">SWORN AFFIDAVIT</span>
-    </div>
-    <div style="position:absolute;left:207.72px;top:54.92px" class="cls_003">
-      <span class="cls_003">B-BBEE Exempted Micro Enterprise</span>
-    </div>
-    <div style="position:absolute;left:272.38px;top:72.98px" class="cls_004">
-      <span class="cls_004">GENERAL</span>
-    </div>
-    <div style="position:absolute;left:71.12px;top:78.91px" class="cls_018">
-      <span class="cls_018">LOGO</span>
-    </div>
-    <div style="position:absolute;left:487.50px;top:107.05px" class="cls_005">
-      <span class="cls_005">DATE OF ISSUE</span>
-    </div>
-    <div style="position:absolute;left:427.67px;top:116.94px" class="cls_006">
-      <span class="cls_006">1</span>
-    </div>
-    <div style="position:absolute;left:458.58px;top:117.88px" class="cls_007">
-      <span class="cls_007">{{ formData.issueDate }}</span>
-    </div>
-    <div style="position:absolute;left:49.52px;top:127.08px" class="cls_008">
-      <span class="cls_008">MEASURED ENTERPRISE/BUSINESS ENTITY</span>
-    </div>
-    <div style="position:absolute;left:50.02px;top:153.75px" class="cls_009">
-      <span class="cls_009">Enterprise Name (</span
-      ><span class="cls_010">Full Name</span><span class="cls_009">):</span>
-    </div>
-    <div style="position:absolute;left:193.03px;top:153.75px" class="cls_007">
-      <span class="cls_007">{{ formData.enterpriseName }}</span>
-    </div>
-    <div style="position:absolute;left:562.60px;top:152.31px" class="cls_006">
-      <span class="cls_006">2</span>
-    </div>
-    <div style="position:absolute;left:50.02px;top:166.75px" class="cls_009">
-      <span class="cls_009">Trade Name (</span
-      ><span class="cls_010">If Applicable</span><span class="cls_009">):</span>
-    </div>
-    <div style="position:absolute;left:193.03px;top:166.75px" class="cls_007">
-      <span class="cls_007">{{ formData.tradeName }}</span>
-    </div>
-    <div style="position:absolute;left:562.60px;top:165.54px" class="cls_006">
-      <span class="cls_006">3</span>
-    </div>
-    <div style="position:absolute;left:50.02px;top:179.75px" class="cls_009">
-      <span class="cls_009">Registration Number:</span>
-    </div>
-    <div style="position:absolute;left:193.03px;top:179.75px" class="cls_007">
-      <span class="cls_007">{{ formData.registrationNumber }}</span>
-    </div>
-    <div style="position:absolute;left:562.60px;top:178.41px" class="cls_006">
-      <span class="cls_006">4</span>
-    </div>
-    <div style="position:absolute;left:50.02px;top:192.75px" class="cls_009">
-      <span class="cls_009">Type of Entity (</span
-      ><span class="cls_010">CC, PTY Ltd, etc</span
-      ><span class="cls_009">):</span>
-    </div>
-    <div style="position:absolute;left:193.03px;top:192.75px" class="cls_007">
-      <span class="cls_007">{{ formData.entityType }}</span>
-    </div>
-    <div style="position:absolute;left:562.60px;top:191.28px" class="cls_006">
-      <span class="cls_006">5</span>
-    </div>
-    <div style="position:absolute;left:50.02px;top:205.75px" class="cls_009">
-      <span class="cls_009">Physical Address:</span>
-    </div>
-    <div style="position:absolute;left:193.03px;top:205.75px" class="cls_007">
-      <span class="cls_007">{{ formData.physicalAddress }}</span>
-    </div>
-    <div style="position:absolute;left:562.60px;top:204.15px" class="cls_006">
-      <span class="cls_006">6</span>
-    </div>
-    <div style="position:absolute;left:41.42px;top:236.67px" class="cls_009">
-      <span class="cls_009">I hereby declare under Oath that:</span>
-    </div>
-    <div style="position:absolute;left:374.26px;top:256.89px" class="cls_015">
-      <span class="cls_015">Black Designated Group Owned %</span>
-    </div>
-    <div style="position:absolute;left:19.67px;top:259.97px" class="cls_006">
-      <span class="cls_006">7</span>
-    </div>
-    <div style="position:absolute;left:41.42px;top:262.87px" class="cls_009">
-      <span class="cls_009">The Enterprise is</span
-      ><span class="cls_011"> </span
-      ><span class="cls_012">
-        {{ formData.percentageBlackOwnedEnterprise }} %</span
-      ><span class="cls_011"> </span
-      ><span class="cls_009"
-        >Black Owned as per Amended Code Series 100 of</span
-      >
-    </div>
-    <div style="position:absolute;left:374.26px;top:269.89px" class="cls_015">
-      <span class="cls_015">Breakdown as per the de nition stated</span>
-    </div>
-    <div style="position:absolute;left:41.42px;top:275.87px" class="cls_009">
-      <span class="cls_009"
-        >the Amended Codes of Good Practice issued under section 9 (1) of
-        B-BBEE</span
-      >
-    </div>
-    <div style="position:absolute;left:41.42px;top:287.87px" class="cls_009">
-      <span class="cls_009"
-        >Act No 53 of 2003 as Amended by Act No 46 of 2013;</span
-      >
-    </div>
-    <div style="position:absolute;left:374.26px;top:297.20px" class="cls_009">
-      <span class="cls_009">Black Youth %</span>
-    </div>
-    <div style="position:absolute;left:500.50px;top:297.20px" class="cls_014">
-      <span class="cls_014"> {{ formData.percentageBlackYouth }}</span>
-    </div>
-    <div style="position:absolute;left:563.03px;top:296.28px" class="cls_006">
-      <span class="cls_006">10</span>
-    </div>
-    <div style="position:absolute;left:19.67px;top:311.78px" class="cls_006">
-      <span class="cls_006">8</span>
-    </div>
-    <div style="position:absolute;left:41.42px;top:314.07px" class="cls_009">
-      <span class="cls_009">The Enterprise is</span
-      ><span class="cls_011"> </span
-      ><span class="cls_012">
-        {{ formData.percentageBlackFemaleOwnedEnterprise }} %</span
-      ><span class="cls_011"> </span
-      ><span class="cls_009">Black Female Owned as per Amended Code</span>
-    </div>
-    <div style="position:absolute;left:374.26px;top:319.20px" class="cls_009">
-      <span class="cls_009">Black Disabled %</span>
-    </div>
-    <div style="position:absolute;left:500.50px;top:319.20px" class="cls_014">
-      <span class="cls_014">{{ formData.percentageBlackDisabled }}</span>
-    </div>
-    <div style="position:absolute;left:563.03px;top:318.31px" class="cls_006">
-      <span class="cls_006">11</span>
-    </div>
-    <div style="position:absolute;left:41.42px;top:327.07px" class="cls_009">
-      <span class="cls_009"
-        >Series 100 of the Amended Codes of Good Practice issued under section
-        9</span
-      >
-    </div>
-    <div style="position:absolute;left:41.42px;top:339.07px" class="cls_009">
-      <span class="cls_009"
-        >(1) of B-BBEE Act No 53 of 2003 as Amended by Act No 46 of 2013;</span
-      >
-    </div>
-    <div style="position:absolute;left:374.26px;top:341.20px" class="cls_009">
-      <span class="cls_009">Black Unemployed %</span>
-    </div>
-    <div style="position:absolute;left:500.50px;top:341.20px" class="cls_014">
-      <span class="cls_014">{{ formData.percentageBlackUnemployed }} </span>
-    </div>
-    <div style="position:absolute;left:563.03px;top:338.52px" class="cls_006">
-      <span class="cls_006">12</span>
-    </div>
-    <div style="position:absolute;left:374.26px;top:363.20px" class="cls_009">
-      <span class="cls_009">Black People living in</span>
-    </div>
-    <div style="position:absolute;left:500.50px;top:363.20px" class="cls_014">
-      <span class="cls_014">{{ formData.percentageBlackRuralAreas }}</span>
-    </div>
-    <div style="position:absolute;left:563.03px;top:362.36px" class="cls_006">
-      <span class="cls_006">13</span>
-    </div>
-    <div style="position:absolute;left:19.67px;top:363.58px" class="cls_006">
-      <span class="cls_006">9</span>
-    </div>
-    <div style="position:absolute;left:41.42px;top:365.27px" class="cls_009">
-      <span class="cls_009">The Enterprise is</span
-      ><span class="cls_011"> </span
-      ><span class="cls_012">
-        {{ formData.percentageBlackDesignatedGroupEnterprise }} %</span
-      ><span class="cls_011"> </span
-      ><span class="cls_009">Black Designated Group Owned as per Amended</span>
-    </div>
-    <div style="position:absolute;left:374.26px;top:375.20px" class="cls_009">
-      <span class="cls_009">Rural areas %</span>
-    </div>
-    <div style="position:absolute;left:41.42px;top:378.27px" class="cls_009">
-      <span class="cls_009"
-        >Code Series 100 of the Amended Codes of Good Practice issued
-        under</span
-      >
-    </div>
-    <div style="position:absolute;left:41.42px;top:390.27px" class="cls_009">
-      <span class="cls_009"
-        >section 9 (1) of B-BBEE Act No 53 of 2003 as Amended by Act No 46
-        of</span
-      >
-    </div>
-    <div style="position:absolute;left:374.26px;top:397.20px" class="cls_009">
-      <span class="cls_009">Black Military Veterans %</span>
-    </div>
-    <div style="position:absolute;left:500.50px;top:397.20px" class="cls_014">
-      <span class="cls_014">
-        {{ formData.percentageBlackMilitaryVeterans }}
-      </span>
-    </div>
-    <div style="position:absolute;left:563.03px;top:394.63px" class="cls_006">
-      <span class="cls_006">14</span>
-    </div>
-    <div style="position:absolute;left:41.42px;top:402.27px" class="cls_009">
-      <span class="cls_009">2013;</span>
-    </div>
-    <div style="position:absolute;left:41.42px;top:426.41px" class="cls_009">
-      <span class="cls_009"
-        >Based on the Financial Statements/Management Accounts and other
-        information available on the latest nancial year-end</span
-      >
-    </div>
-    <div style="position:absolute;left:16.34px;top:437.88px" class="cls_006">
-      <span class="cls_006">15</span>
-    </div>
-    <div style="position:absolute;left:41.42px;top:438.61px" class="cls_009">
-      <span class="cls_009">of</span><span class="cls_011"> </span
-      ><span class="cls_012"> R {{ formData.financialYearEndAmount }} </span
-      ><span class="cls_011"> , </span
-      ><span class="cls_009">the annual Total Revenue was R 10 000 000.00 </span
-      ><span class="cls_010">(Ten Million Rand)</span
-      ><span class="cls_009"> or less;</span>
-    </div>
-    <div style="position:absolute;left:49.52px;top:468.00px" class="cls_009">
-      <span class="cls_009">100% Black Owned</span>
-    </div>
-    <div style="position:absolute;left:193.03px;top:468.00px" class="cls_013">
-      <span class="cls_013">Level One</span
-      ><span class="cls_009">
-        {{
-          formData.enterpriseOwnership == "100BlackOwnedFounderCEO" ? "X" : ""
-        }} </span
-      ><span class="cls_010">(135% B-BBEE procurement recognition level)</span>
-    </div>
-    <div style="position:absolute;left:563.03px;top:465.96px" class="cls_006">
-      <span class="cls_006">16</span>
-    </div>
-    <div style="position:absolute;left:50.02px;top:489.42px" class="cls_009">
-      <span class="cls_009">At least 51% Black Owned</span>
-    </div>
-    <div style="position:absolute;left:193.03px;top:489.42px" class="cls_013">
-      <span class="cls_013">Level Two</span><span class="cls_009"> </span
-      ><span class="cls_010">(125% B-BBEE procurement recognition level)</span>
-    </div>
-    <div style="position:absolute;left:563.03px;top:488.19px" class="cls_006">
-      <span class="cls_006">16</span>
-    </div>
-    <div style="position:absolute;left:50.02px;top:510.84px" class="cls_009">
-      <span class="cls_009">Less than 51% Black Owned</span>
-    </div>
-    <div style="position:absolute;left:193.03px;top:510.84px" class="cls_013">
-      <span class="cls_013">Level Four</span><span class="cls_009"> </span
-      ><span class="cls_010">(100% B-BBEE procurement recognition level)</span>
-    </div>
-    <div style="position:absolute;left:563.03px;top:510.42px" class="cls_006">
-      <span class="cls_006">16</span>
-    </div>
-    <div style="position:absolute;left:41.43px;top:538.42px" class="cls_009">
-      <span class="cls_009"
-        >I know and understand the contents of this a davit and I have no
-        objection to take the prescribed oath and consider the</span
-      >
-    </div>
-    <div style="position:absolute;left:41.43px;top:550.42px" class="cls_009">
-      <span class="cls_009"
-        >oath binding on my conscience and on the Owners of the Enterprise which
-        I represent in this matter.</span
-      >
-    </div>
-    <div style="position:absolute;left:257.13px;top:561.54px" class="cls_006">
-      <span class="cls_006">18</span>
-    </div>
-    <div style="position:absolute;left:41.43px;top:571.03px" class="cls_009">
-      <span class="cls_009">I, the undersigned,</span>
-    </div>
-    <div style="position:absolute;left:16.34px;top:579.40px" class="cls_006">
-      <span class="cls_006">17</span>
-    </div>
-    <div style="position:absolute;left:41.43px;top:584.03px" class="cls_014">
-      <span class="cls_014"> {{ formData.consentFullName }} </span
-      ><span class="cls_011"> </span
-      ><span class="cls_009">with identity number</span
-      ><span class="cls_011"> </span
-      ><span class="cls_014"> {{ formData.consentIdNumber }} </span
-      ><span class="cls_009">hereby declare under oath as follows:</span>
-    </div>
-    <div style="position:absolute;left:41.43px;top:610.03px" class="cls_009">
-      <span class="cls_009"
-        >1. The contents of this statement are to the best of my knowledge a
-        true re ection of the facts.</span
-      >
-    </div>
-    <div style="position:absolute;left:41.43px;top:623.03px" class="cls_009">
-      <span class="cls_009"
-        >2. I am a Member / Director / Owner of the following enterprise and am
-        duly authorised to act on its behalf:</span
-      >
-    </div>
-    <div style="position:absolute;left:42.52px;top:671.39px" class="cls_009">
-      <span class="cls_009">Deponent Signature:</span>
-    </div>
-    <div style="position:absolute;left:42.52px;top:694.39px" class="cls_009">
-      <span class="cls_009">Date:</span>
-    </div>
-    <div style="position:absolute;left:43.52px;top:733.13px" class="cls_016">
-      <span class="cls_016">DEFINITION OF “BLACK PEOPLE”</span>
-    </div>
-    <div style="position:absolute;left:43.52px;top:739.13px" class="cls_017">
-      <span class="cls_017"
-        >As per the Broad-Based Black Economic Empowerment Act 53 of 2003 as
-        Amended by Act No 46 of 2013 “Black People” is a generic term which
-        means Africans, Coloureds and Indians - (a) Who are citizens of the
-        Republic of South Africa by birth or</span
-      >
-    </div>
-    <div style="position:absolute;left:43.52px;top:745.13px" class="cls_017">
-      <span class="cls_017"
-        >descent; or (b) Who became citizens of the Republic of South Africa by
-        naturalization (i). Before 27 April 1994; or (ii). On or after 27 April
-        1994 and who would have been entitled to acquire citizenship by
-        naturalization prior to that date</span
-      >
-    </div>
-    <div style="position:absolute;left:43.52px;top:755.51px" class="cls_016">
-      <span class="cls_016">DEFINITION OF “BLACK DESIGNATED GROUPS”</span>
-    </div>
-    <div style="position:absolute;left:43.52px;top:761.51px" class="cls_017">
-      <span class="cls_017"
-        >(a) unemployed black people not attending and not required by law to
-        attend an educational institution and not awaiting admission to an
-        educational institution;</span
-      >
-    </div>
-    <div style="position:absolute;left:43.52px;top:767.51px" class="cls_017">
-      <span class="cls_017"
-        >(b) Black people who are youth as de ned in the National Youth
-        Commission Act of 1996;</span
-      >
-    </div>
-    <div style="position:absolute;left:43.52px;top:773.51px" class="cls_017">
-      <span class="cls_017"
-        >(c) Black people who are persons with disabilities as de ned in the
-        Code of Good Practice on employment of people with disabilities issued
-        under the Employment Equity Act;</span
-      >
-    </div>
-    <div style="position:absolute;left:43.52px;top:779.51px" class="cls_017">
-      <span class="cls_017"
-        >(d) Black people living in rural and under developed areas;</span
-      >
-    </div>
-    <div style="position:absolute;left:43.52px;top:785.51px" class="cls_017">
-      <span class="cls_017"
-        >(e) Black military veterans who quali es to be called a military
-        veteran in terms of the Military Veterans Act 18 of 2011;”</span
-      >
-    </div>
-    <div style="position:absolute;left:43.52px;top:798.19px" class="cls_019">
-      <span class="cls_019"
-        >Valid for 12 Months from the date signed by the commissioner</span
-      >
-    </div>
+  <div class="position-sticky body" ref="print">
+    	<div id="page_1">
+			<div id="p1dimg1">
+			<img src="data:image/jpg;base64,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T86yFvmLhtxb5s55qTxHps2reH7y0tWjS8KCS0kkJCx3CEPC5wDwsio2MEHGCCOKpp4w06WztZYIL6e6uYhItlBbNJNExJXZLtysLb1ZD5jKoZHBPytgAkg8IaHDcRXElpJezwuHgk1G4lvGgYHOYzMzGM5AJK4zgZ6DEdv/AMS7xzd2w4h1a0F6irz++hKxSsxPTKPagAcfu2OAeWP+ErS251fR9V0qM8ia4hWWMAfeZ3gaRYlXglpCoxzkgHBa/wDE08ZT6gnzWmnWjWUMyfdeaSTNwp/vbPJgGRwGMikllIUA6CiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigDP1zU/7G0O91EQ+fJBEzRQBtpnk6JGpwfmdiqgAEksAATxWXB4Xu7S3iktdeu4dSKBrycRo8V9MB9+SNwSBnjEbIdm1AwCJtseL4JpvDF1JbxSTz2bxX0cEalmnaCRZhEMc5cx7c4ON2cHodiCeG6t4ri3ljmglQPHJGwZXUjIII4II5zQBh/2Nrt78up+I9sI4MelWgtfMU/eDs7SuOOhjaNhknOcFY9Fgh8P69N4etYo7fTJbc3thCigBG8xvtCLjogaSFgD3lYKdqhU6SufT/TvHzSp/q9K08wM4+YPJcOjlCf4WRYI2I5JE6ngY3AHQUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFYc+lalZXEs+g3NpFHK5mmsrqJmjkkJyTG6sDCXJO47XGfm2bi+/cooA5/Z4svvklfStIj6M1uz3sjg9Sh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jgfMjBlIIBBUggHiigC5PBDdW8tvcRRzQSoUkjkUMrqRggg8EEcYrD/sbXbL5dM8R7oTwI9VtBdeWo+6EZGic8dTI0jHAOc5LdBRQBj2Ohyx3kd7qepT6ldR5aISRpHDbswIYxIoyMglQXZ2CkgN8zbtiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAK59/8AQfHyyv8A6vVdPECuflCSW7u4QH+JnWeRgOCBAx5GdvQVXvrG31GzktbqPzIXwSAxUgggqysMFWBAIYEEEAggigCxUc88Nrby3FxLHDBEheSSRgqooGSSTwABzmsPZ4ssfkifStXj6K1wz2UiAdC5RZVkY9yqxgEcDBwp/Y2qarxr2oQNZty2nWUO2NweTHNI5LSqOB8oiDDcGUq20AEnhCCaHwxayXEUkE948t9JBIpVoGnkaYxHPOUMm3OBnbnA6ArcooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKz9T1P7D5Vvbw/adQuMi3tg23djG52bB2RrkbmwcZAAZmVW0K59Pn+Ic32jjydKj+xbuM75X+0bf73+rtc9duV6b+QA/4Rh7v59X1zVbuTqFt7lrKOIn7wQQFWK9MCRpCAOuSSY57XV/D1vLeWmoXeq2cCF30+5iEs5jUcLBIoDF8Z/1nmFyFG5SS9dJRQBHBPDdW8VxbyxzQSoHjkjYMrqRkEEcEEc5orD8FceFbaNP+PWKWeGzI5BtUmdbcqf4l8oR4bncMHJzklAHQUUUUAFFFFABRRRQAUUUUAFFFFABRRRQA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igAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigArn3/07x8sT/6vStPE6ofmDyXDugcD+FkWCRQeSROw4Gd3QVz+s/8AEq1yx14/LZrFJaag44CRnDxzOe6xsrLyMKJ3clVDZAOgqOeCG6t5be4ijmglQpJHIoZXUjBBB4II4xUlZ+sazZ6HZpcXb/NLKlvbwqQHnmc4SNMkAsT6kAckkAEgAp+EJ5pvDFrHcSyTz2by2Mk8jFmnaCRoTKc85cx7sZON2MnqSrHhzTZtJ8P2dpdNG94EMl3JGSVkuHJeZxkDhpGdsYAGcAAcUUAalFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFAHP/APCKJbcaRrGq6VGeDDbzLLGAPuqiTrIsSryAsYUY4wQBi5pug2mm3DXfm3d1eOhVrm7uHlbkgttBO2MMQCVjCr8q8YVQNSigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAK5/wD4StLnnSNH1XVYxyZreFYoyD91kedo1lVuSGjLDHOQCMmp/wDE38QxaE/z6fHaG61CMcb9zhYY2z96N9s5ZR18sBvlYq/QUAZem69aalcNaeVd2t4iFmtru3eJuCA20kbZApIBaMsvzLzhlJ1Kp6lpsOp26xyNJFJG4kguIiBJBIAQHQkEZwSCCCCCVYFSQa/hzUptW8P2d3dLGl4UMd3HGCFjuEJSZBknhZFdc5IOMgkc0AalFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFAHP3X/Er8ZQag/wAtpqNotlNM/wB1Jo5M26j+7v8AOnGTwWEaghmAboKjnghureW3uIo5oJUKSRyKGV1IwQQeCCOMVh/2Nrtl8umeI90J4Eeq2guvLUfdCMjROeOpkaRjgHOclgDYvr6306zkurqTy4UwCQpYkkgKqqMlmJIAUAkkgAEms/wtY3Fh4ctI72Pyr6bfdXcYYERzzO0sqqRn5Q7sByeAOT1JY6HLHeR3up6lPqV1HlohJGkcNuzAhjEijIyCVBdnYKSA3zNu2KACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooqnqWpQ6ZbrJIskskjiOC3iAMk8hBIRASBnAJJJAABZiFBIALlFc//AGX4ivvnvfEH2DukOlW0fy56q8k6yeZjgBlWPPJK8gLHNf6v4cQTarLHqemb1ja5ggEMtqpYDzZ8vsdADl3QJt252FSdgB0lFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABXPv/p3j5Yn/ANXpWnidUPzB5Lh3QOB/CyLBIoPJInYcDO7oKw9VgmstZt9egikmjit3tryCBSZJIyyssgA5kMZD4TriWTblvkcA3KKjgnhureK4t5Y5oJUDxyRsGV1IyCCOCCOc1n63rcOkW+1fLn1KdH+w2HmBZLuQD7q9TjJG5sYQHc2ACaAKfgr934VtrMf6uwln0+Inq0dvM8CFv9orGpJGBknAA4orQ0PTP7G0Oy04zefJBEqyzldpnk6vIwyfmdizEkkksSSTzRQBoUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUVl6rqU0Fxb6bYLG2pXaO8RlB8uKNCoeV8EFgpdAEBBYsBlRudQCvP4Q0Oa4luI7SSynmcvPJp1xLZtOxOcyGFlMhySQWzjJx1ObmmaHpejeadOsILeSbBnmVP3k5GcNI5+aRuSdzEkkkk5JrP/wCEL0Kf5tTtP7YmPJk1VjdYY/eKK+Ui3HqI1VeAMYAAjn0GbRbeW78OS3YkhQuulvcF7e4wPliUSEiAYyq+WUVSVLKyqFoA6Siq9hfW+p6dbX9nJ5lrdRJNC+0jcjAFTg8jII60UAWKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAK59Pk+Ic32jnztKj+xbucbJX+0bf7v+stc9N2F67OOgrP1PTPt3lXFvN9m1C3ybe5C7tucbkZcjfG2BuXIzgEFWVWUA0KK5//AISd7T5NX0PVbSToGt7Zr2OUj7xQwBmC9MGRYyQemQQI57rV/ENvLZ2mn3elWc6FH1C5lEU4jYcNBGpLB8Z/1nllCVO1iClAEngrnwrbSJ/x6yyzzWYHAFq8ztbhR/CvlGPC8bRgYGMArcgghtbeK3t4o4YIkCRxxqFVFAwAAOAAOMUUASUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUV5n8S9X8YeDLiHxXpd/He+H4XRb/AEqaONdgJCBkkC78EkdyVYg4ZSQoB6ZRXj/w+8Z+KviB8QNQ1K2lns/BtrkJby28R8x9oVU343BjnzDgtt4UnDAn2CgAooooAKKKw9VnmvdZt9Bglkhjlt3ubyeBiJI4wyqsYI5jMhL4friKTbhvnQAJ/F+hw3EtvHdyXs8LlJ49Ot5bxoGBxiQQqxjOQQA2M4OOhxc0zXNL1nzRp1/BcSQ4E8Kv+8gJzhZEPzRtwRtYAgggjINXIIIbW3it7eKOGCJAkccahVRQMAADgADjFZ+t6JDq9vuXy4NSgR/sN/5YaS0kI+8vQ4yBuXOHA2tkEigDUorP0PU/7Z0Oy1Ew+RJPErSwFtxgk6PGxwPmRgykEAgqQQDxRQBoUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAV538UPBvibxylhpOmalaWGihw98XkYvMdwx8gTBCgFgC4DEjONoNeiUUAeV/Dz4aa18PfGOpvaX9pdeG71NuyRytwpXmNiAmCVy68MoIbdjIC16pRRQAUUUUAFc+/wDoPj5ZX/1eq6eIFc/KEkt3dwgP8TOs8jAcECBjyM7egqvfWNvqNnJa3UfmQvgkBipBBBVlYYKsCAQwIIIBBBFAFio554bW3luLiWOGCJC8kkjBVRQMkkngADnNYezxZY/JE+lavH0VrhnspEA6FyiyrIx7lVjAI4GDhT+xtU1XjXtQgazbltOsodsbg8mOaRyWlUcD5REGG4MpVtoAJPCEE0Phi1kuIpIJ7x5b6SCRSrQNPI0xiOecoZNucDO3OB0BW5RQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRVe+vrfTrOS6upPLhTAJCliSSAqqoyWYkgBQCSSAASax/sniLVP3s+qf2Pbv86W9pbxvcx+gklk3xnjkhU4OAHYDLAHQUVz+Nd0T99Pef2xp0f31+yBbxVPJfMZCS7T/AALGrFem5htfcgnhureK4t5Y5oJUDxyRsGV1IyCCOCCOc0ASUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAc/qn+k+NPD9m/EcMV3qCkdTIgjgAP8As7bqQkdchecAg9BWXrWmzXwsrm0aMXmn3H2q3SUkRyN5bxlHIBIBWRwGGdpwcMAVJpviHTdTuGs47mOLUo0LT6fK6i4gwQDvQEnGSMMMqQQVJBBIBqVz/hf9xPr+nLzDZ6rJ5bH7x85I7ls/R53A/wBkL1OSbF94is4byTTLGWC+1oYAsI5hvTIBDy4yY4wCCWI7gAMzKrWNF0z+yNMFqZvOkaWW4lkC7Q0ksjSPtXJwu52wCSQMAknkgGhRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAU9S1KHTLdZJFklkkcRwW8QBknkIJCICQM4BJJIAALMQoJGX/ZfiK++e98QfYO6Q6VbR/LnqryTrJ5mOAGVY88kryAon+lfEObfx/Z2lR+Vt/i+0yvv3euPskeMY6tnORjoKAOf+16poP73WLuC90sfK12lv5UlsB0ebDFXU/wATqECHkqELGPoKK5/wV+78K21mP9XYSz6fET1aO3meBC3+0VjUkjAyTgAcUAdBRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABVPUtJ03WbdbfVNPtL6BXDrHdQrKobBGQGBGcEjPuauUUAV7Gws9Ms47OwtILS1jzshgjEaLkknCjgZJJ/GrFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAY+rWNwNRtNaso/PurOKWE2pYL50UhjZwpOAJAYkK5O08qdu7eljTNc0vWfNGnX8FxJDgTwq/7yAnOFkQ/NG3BG1gCCCCMg1oVn6noWj635X9raVY3/AJOfL+126S7M4zjcDjOB09BQBTn8Qw3lxLpug3Npe6kjmOYq4kjssHBabacgg5AjyGcgj5QHdNDSdNh0bRrHS7dpGgsreO3jaQgsVRQoJwAM4HoKsQQQ2tvFb28UcMESBI441CqigYAAHAAHGKkoAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiimSCQqPKZVbcMll3DGRkdRyRkA9jzg9KAH0VlfZ/EH/QT0z/AMF0n/x+j7P4g/6Cemf+C6T/AOP1XL5m3sl/Ovx/yNWiorZbhLdVupYpZhnc8UZjU88YUsxHGO5rP+z+IP8AoJ6Z/wCC6T/4/SsTGCba5kvv/wAjVorK+z+IP+gnpn/guk/+P1oWy3CW6rdSxSzDO54ozGp54wpZiOMdzQ1YJQUVfmT9L/5IlorK+z+IP+gnpn/guk/+P0fZ/EH/AEE9M/8ABdJ/8fp8vmV7Jfzr8f8AI1aKitluEt1W6lilmGdzxRmNTzxhSzEcY7ms/wCz+IP+gnpn/guk/wDj9KxMYJtrmS+/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" id="p1img1"></div>
+			
+			
+			<div class="dclr"></div>
+			<div id="id1_1">
+			<div id="id1_1_1">
+			<table class="t0" cellspacing="0" cellpadding="0">
+			<tbody><tr>
+				<td class="tr0 td0"><p class="p0 ft0">&nbsp;</p></td>
+				<td class="tr1 td1"><p class="p0 ft0">&nbsp;</p></td>
+				<td class="tr1 td2"><p class="p0 ft0">&nbsp;</p></td>
+				<td class="tr1 td3"><p class="p0 ft1">SWORN AFFIDAVIT</p></td>
+			</tr>
+			<tr>
+				<td class="tr2 td4"><p class="p0 ft0">&nbsp;</p></td>
+				<td class="tr2 td1"><p class="p0 ft0">&nbsp;</p></td>
+				<td colspan="2" class="tr2 td5"><p class="p1 ft2"><nobr>B-BBEE</nobr> Exempted Micro Enterprise</p></td>
+			</tr>
+			<tr>
+				<td rowspan="2" class="tr3 td4"><p class="p2 ft3">LOGO</p></td>
+				<td class="tr4 td1"><p class="p0 ft0">&nbsp;</p></td>
+				<td class="tr4 td2"><p class="p0 ft0">&nbsp;</p></td>
+				<td class="tr4 td3"><p class="p3 ft4">GENERAL</p></td>
+			</tr>
+			<tr>
+				<td class="tr5 td1"><p class="p0 ft5">&nbsp;</p></td>
+				<td class="tr5 td2"><p class="p0 ft5">&nbsp;</p></td>
+				<td class="tr5 td3"><p class="p0 ft5">&nbsp;</p></td>
+			</tr>
+			<tr>
+				<td class="tr6 td6"><p class="p0 ft6">&nbsp;</p></td>
+				<td class="tr7 td1"><p class="p0 ft7">&nbsp;</p></td>
+				<td class="tr6 td7"><p class="p0 ft6">&nbsp;</p></td>
+				<td class="tr6 td8"><p class="p0 ft6">&nbsp;</p></td>
+			</tr>
+			</tbody></table>
+			<table class="t1" cellspacing="0" cellpadding="0">
+			<tbody><tr>
+				<td class="tr8 td9"><p class="p0 ft0">&nbsp;</p></td>
+				<td class="tr8 td10"><p class="p0 ft0">&nbsp;</p></td>
+				<td class="tr8 td11"><p class="p0 ft0">&nbsp;</p></td>
+				<td rowspan="2" class="tr0 td12"><p class="p4 ft8">1</p></td>
+				<td class="tr8 td13"><p class="p0 ft0">&nbsp;</p></td>
+				<td colspan="3" class="tr8 td14"><p class="p5 ft9">DATE OF ISSUE</p></td>
+			</tr>
+			<tr>
+				<td class="tr9 td9"><p class="p0 ft0">&nbsp;</p></td>
+				<td colspan="2" rowspan="2" class="tr10 td15"><p class="p6 ft10">MEASURED ENTERPRISE/BUSINESS ENTITY</p></td>
+				<td class="tr9 td16"><p class="p0 ft0">&nbsp;</p></td>
+				<td colspan="2" class="tr9 td17"><p class="p7 ft11">{{ formData.issueDate }}</p></td>
+				<td class="tr9 td18"><p class="p0 ft0">&nbsp;</p></td>
+			</tr>
+			<tr>
+				<td class="tr7 td9"><p class="p0 ft7">&nbsp;</p></td>
+				<td class="tr7 td12"><p class="p0 ft7">&nbsp;</p></td>
+				<td class="tr7 td13"><p class="p0 ft7">&nbsp;</p></td>
+				<td class="tr7 td19"><p class="p0 ft7">&nbsp;</p></td>
+				<td class="tr7 td20"><p class="p0 ft7">&nbsp;</p></td>
+				<td class="tr7 td18"><p class="p0 ft7">&nbsp;</p></td>
+			</tr>
+			<tr>
+				<td class="tr5 td21"><p class="p0 ft5">&nbsp;</p></td>
+				<td class="tr5 td22"><p class="p0 ft5">&nbsp;</p></td>
+				<td class="tr5 td23"><p class="p0 ft5">&nbsp;</p></td>
+				<td class="tr5 td24"><p class="p0 ft5">&nbsp;</p></td>
+				<td class="tr5 td25"><p class="p0 ft5">&nbsp;</p></td>
+				<td class="tr5 td26"><p class="p0 ft5">&nbsp;</p></td>
+				<td class="tr5 td27"><p class="p0 ft5">&nbsp;</p></td>
+				<td class="tr5 td28"><p class="p0 ft5">&nbsp;</p></td>
+			</tr>
+			<tr>
+				<td class="tr7 td29"><p class="p0 ft7">&nbsp;</p></td>
+				<td rowspan="2" class="tr11 td30"><p class="p8 ft13">Enterprise Name (<span class="ft12">Full Name</span>):</p></td>
+				<td class="tr7 td31"><p class="p0 ft7">&nbsp;</p></td>
+				<td class="tr7 td32"><p class="p0 ft7">&nbsp;</p></td>
+				<td class="tr7 td33"><p class="p0 ft7">&nbsp;</p></td>
+				<td class="tr7 td34"><p class="p0 ft7">&nbsp;</p></td>
+				<td class="tr7 td35"><p class="p0 ft7">&nbsp;</p></td>
+				<td class="tr7 td36"><p class="p0 ft7">&nbsp;</p></td>
+			</tr>
+			<tr>
+				<td class="tr12 td37"><p class="p0 ft0">&nbsp;</p></td>
+				<td class="tr12 td38"><p class="p9 ft14">{{ formData.enterpriseName }}</p></td>
+				<td class="tr12 td39"><p class="p0 ft0">&nbsp;</p></td>
+				<td class="tr12 td40"><p class="p0 ft0">&nbsp;</p></td>
+				<td class="tr12 td41"><p class="p0 ft0">&nbsp;</p></td>
+				<td class="tr12 td42"><p class="p0 ft0">&nbsp;</p></td>
+				<td class="tr12 td43"><p class="p0 ft0">&nbsp;</p></td>
+			</tr>
+			<tr>
+				<td class="tr13 td37"><p class="p0 ft0">&nbsp;</p></td>
+				<td class="tr13 td30"><p class="p8 ft13">Trade Name (<span class="ft12">If Applicable</span>):</p></td>
+				<td class="tr13 td38"><p class="p9 ft14">{{ formData.tradeName }}</p></td>
+				<td class="tr13 td39"><p class="p0 ft0">&nbsp;</p></td>
+				<td class="tr13 td40"><p class="p0 ft0">&nbsp;</p></td>
+				<td class="tr13 td41"><p class="p0 ft0">&nbsp;</p></td>
+				<td class="tr13 td42"><p class="p0 ft0">&nbsp;</p></td>
+				<td class="tr13 td43"><p class="p0 ft0">&nbsp;</p></td>
+			</tr>
+			<tr>
+				<td class="tr12 td37"><p class="p0 ft0">&nbsp;</p></td>
+				<td class="tr12 td30"><p class="p8 ft13">Registration Number:</p></td>
+				<td class="tr12 td38"><p class="p9 ft14">{{ formData.registrationNumber }}</p></td>
+				<td class="tr12 td39"><p class="p0 ft0">&nbsp;</p></td>
+				<td class="tr12 td40"><p class="p0 ft0">&nbsp;</p></td>
+				<td class="tr12 td41"><p class="p0 ft0">&nbsp;</p></td>
+				<td class="tr12 td42"><p class="p0 ft0">&nbsp;</p></td>
+				<td class="tr12 td43"><p class="p0 ft0">&nbsp;</p></td>
+			</tr>
+			<tr>
+				<td class="tr12 td37"><p class="p0 ft0">&nbsp;</p></td>
+				<td class="tr12 td30"><p class="p8 ft9">Type of Entity (<span class="ft15">CC, PTY Ltd, etc</span>):</p></td>
+				<td class="tr12 td38"><p class="p9 ft14">{{ formData.entityType }}</p></td>
+				<td class="tr12 td39"><p class="p0 ft0">&nbsp;</p></td>
+				<td class="tr12 td40"><p class="p0 ft0">&nbsp;</p></td>
+				<td class="tr12 td41"><p class="p0 ft0">&nbsp;</p></td>
+				<td class="tr12 td42"><p class="p0 ft0">&nbsp;</p></td>
+				<td class="tr12 td43"><p class="p0 ft0">&nbsp;</p></td>
+			</tr>
+			<tr>
+				<td class="tr14 td29"><p class="p0 ft16">&nbsp;</p></td>
+				<td class="tr14 td44"><p class="p8 ft17">Physical Address:</p></td>
+				<td colspan="3" class="tr14 td45"><p class="p9 ft18">{{ formData.physicalAddress }}</p></td>
+				<td class="tr14 td46"><p class="p0 ft16">&nbsp;</p></td>
+				<td class="tr14 td35"><p class="p0 ft16">&nbsp;</p></td>
+				<td class="tr14 td36"><p class="p0 ft16">&nbsp;</p></td>
+			</tr>
+			<tr>
+				<td class="tr14 td37"><p class="p0 ft16">&nbsp;</p></td>
+				<td class="tr14 td47"><p class="p0 ft16">&nbsp;</p></td>
+				<td class="tr14 td48"><p class="p0 ft16">&nbsp;</p></td>
+				<td class="tr14 td49"><p class="p0 ft16">&nbsp;</p></td>
+				<td class="tr14 td50"><p class="p0 ft16">&nbsp;</p></td>
+				<td class="tr14 td51"><p class="p0 ft16">&nbsp;</p></td>
+				<td class="tr14 td52"><p class="p0 ft16">&nbsp;</p></td>
+				<td class="tr14 td53"><p class="p0 ft16">&nbsp;</p></td>
+			</tr>
+			</tbody></table>
+			<table class="t2" cellspacing="0" cellpadding="0">
+			<tbody><tr>
+				<td class="tr15 td54"></td>
+				<td class="tr15 td18"><p class="p0 ft0">&nbsp;</p></td>
+				<td colspan="5" class="tr15 td55"><p class="p10 ft13">I hereby declare under Oath that:</p></td>
+				<td class="tr15 td56"><p class="p0 ft0">&nbsp;</p></td>
+				<td class="tr15 td57"><p class="p0 ft0">&nbsp;</p></td>
+				<td class="tr15 td58"><p class="p0 ft0">&nbsp;</p></td>
+			</tr>
+			<tr>
+				<td class="tr8 td54"></td>
+				<td rowspan="3" class="tr0 td18"><p class="p11 ft8">7</p></td>
+				<td class="tr8 td59"><p class="p0 ft0">&nbsp;</p></td>
+				<td class="tr8 td60"><p class="p0 ft0">&nbsp;</p></td>
+				<td class="tr8 td61"><p class="p0 ft0">&nbsp;</p></td>
+				<td class="tr8 td60"><p class="p0 ft0">&nbsp;</p></td>
+				<td class="tr8 td62"><p class="p0 ft0">&nbsp;</p></td>
+				<td colspan="3" rowspan="2" class="tr16 td63"><p class="p12 ft19">Black Designated Group Owned %</p></td>
+			</tr>
+			<tr>
+				<td class="tr17 td54"></td>
+				<td rowspan="2" class="tr9 td59"><p class="p10 ft9">The Enterprise is</p></td>
+				<td colspan="2" rowspan="2" class="tr9 td64"><p class="p13 ft20">{{ formData.percentageBlackOwnedEnterprise }} %</p></td>
+				<td colspan="2" rowspan="2" class="tr9 td65"><p class="p14 ft13">Black Owned as per Amended Code Series 100 of</p></td>
+			</tr>
+			<tr>
+				<td class="tr7 td54"></td>
+				<td colspan="3" rowspan="2" class="tr8 td63"><p class="p12 ft19">Breakdown as per the denition stated</p></td>
+			</tr>
+			<tr>
+				<td class="tr5 td54"></td>
+				<td class="tr5 td18"><p class="p0 ft5">&nbsp;</p></td>
+				<td colspan="5" rowspan="2" class="tr18 td55"><p class="p10 ft21">the Amended Codes of Good Practice issued under section 9 (1) of <nobr>B-BBEE</nobr></p></td>
+			</tr>
+			<tr>
+				<td class="tr5 td54"></td>
+				<td class="tr5 td18"><p class="p0 ft5">&nbsp;</p></td>
+				<td class="tr5 td56"><p class="p0 ft5">&nbsp;</p></td>
+				<td class="tr5 td57"><p class="p0 ft5">&nbsp;</p></td>
+				<td class="tr5 td58"><p class="p0 ft5">&nbsp;</p></td>
+			</tr>
+			<tr>
+				<td class="tr19 td54"></td>
+				<td class="tr20 td18"><p class="p0 ft22">&nbsp;</p></td>
+				<td colspan="5" rowspan="3" class="tr13 td55"><p class="p10 ft13">Act No 53 of 2003 as Amended by Act No 46 of 2013;</p></td>
+				<td class="tr19 td66"><p class="p0 ft23">&nbsp;</p></td>
+				<td class="tr19 td67"><p class="p0 ft23">&nbsp;</p></td>
+				<td class="tr19 td68"><p class="p0 ft23">&nbsp;</p></td>
+			</tr>
+			<tr>
+				<td class="tr20 td54"></td>
+				<td class="tr20 td18"><p class="p0 ft22">&nbsp;</p></td>
+				<td class="tr20 td69"><p class="p0 ft22">&nbsp;</p></td>
+				<td class="tr20 td70"><p class="p0 ft22">&nbsp;</p></td>
+				<td class="tr20 td71"><p class="p0 ft22">&nbsp;</p></td>
+			</tr>
+			<tr>
+				<td class="tr19 td54"></td>
+				<td class="tr19 td18"><p class="p0 ft23">&nbsp;</p></td>
+				<td rowspan="2" class="tr8 td72"><p class="p12 ft13">Black Youth %</p></td>
+				<td rowspan="2" class="tr8 td73"><p class="p15 ft14">{{ formData.percentageBlackYouth }}%</p></td>
+				<td class="tr19 td71"><p class="p0 ft23">&nbsp;</p></td>
+			</tr>
+			<tr>
+				<td class="tr14 td54"></td>
+				<td class="tr18 td18"><p class="p0 ft24">&nbsp;</p></td>
+				<td class="tr18 td59"><p class="p0 ft24">&nbsp;</p></td>
+				<td class="tr18 td60"><p class="p0 ft24">&nbsp;</p></td>
+				<td class="tr18 td61"><p class="p0 ft24">&nbsp;</p></td>
+				<td class="tr18 td60"><p class="p0 ft24">&nbsp;</p></td>
+				<td class="tr18 td62"><p class="p0 ft24">&nbsp;</p></td>
+				<td class="tr14 td74"><p class="p0 ft16">&nbsp;</p></td>
+			</tr>
+			<tr>
+				<td class="tr21 td54"></td>
+				<td rowspan="2" class="tr22 td18"><p class="p11 ft8">8</p></td>
+				<td rowspan="2" class="tr22 td59"><p class="p10 ft9">The Enterprise is</p></td>
+				<td colspan="2" rowspan="2" class="tr22 td64"><p class="p13 ft20">{{ formData.percentageBlackFemaleOwnedEnterprise }} %</p></td>
+				<td colspan="2" rowspan="2" class="tr22 td65"><p class="p14 ft13">Black Female Owned as per Amended Code</p></td>
+				<td class="tr21 td75"><p class="p0 ft25">&nbsp;</p></td>
+				<td class="tr21 td76"><p class="p0 ft25">&nbsp;</p></td>
+				<td class="tr21 td77"><p class="p0 ft25">&nbsp;</p></td>
+			</tr>
+			<tr>
+				<td class="tr23 td54"></td>
+				<td rowspan="2" class="tr9 td69"><p class="p12 ft13">Black Disabled %</p></td>
+				<td rowspan="2" class="tr9 td64"><p class="p15 ft14">{{ formData.percentageBlackDisabled }} %</p></td>
+				<td class="tr23 td71"><p class="p0 ft26">&nbsp;</p></td>
+			</tr>
+			<tr>
+				<td class="tr5 td54"></td>
+				<td class="tr5 td18"><p class="p0 ft5">&nbsp;</p></td>
+				<td colspan="5" rowspan="2" class="tr8 td55"><p class="p10 ft13">Series 100 of the Amended Codes of Good Practice issued under section 9</p></td>
+				<td class="tr5 td71"><p class="p0 ft5">&nbsp;</p></td>
+			</tr>
+			<tr>
+				<td class="tr6 td54"></td>
+				<td class="tr7 td18"><p class="p0 ft7">&nbsp;</p></td>
+				<td class="tr6 td72"><p class="p0 ft6">&nbsp;</p></td>
+				<td class="tr6 td78"><p class="p0 ft6">&nbsp;</p></td>
+				<td class="tr6 td74"><p class="p0 ft6">&nbsp;</p></td>
+			</tr>
+			<tr>
+				<td class="tr8 td54"></td>
+				<td class="tr8 td18"><p class="p0 ft0">&nbsp;</p></td>
+				<td colspan="5" class="tr8 td55"><p class="p10 ft13">(1) of <nobr>B-BBEE</nobr> Act No 53 of 2003 as Amended by Act No 46 of 2013;</p></td>
+				<td class="tr8 td69"><p class="p12 ft13">Black Unemployed %</p></td>
+				<td class="tr8 td64"><p class="p15 ft14">{{ formData.percentageBlackUnemployed }}</p></td>
+				<td class="tr8 td71"><p class="p0 ft0">&nbsp;</p></td>
+			</tr>
+			<tr>
+				<td class="tr7 td54"></td>
+				<td rowspan="3" class="tr24 td18"><p class="p11 ft8">9</p></td>
+				<td colspan="2" class="tr7 td79"><p class="p0 ft7">&nbsp;</p></td>
+				<td class="tr7 td61"><p class="p0 ft7">&nbsp;</p></td>
+				<td class="tr7 td60"><p class="p0 ft7">&nbsp;</p></td>
+				<td class="tr7 td62"><p class="p0 ft7">&nbsp;</p></td>
+				<td rowspan="3" class="tr25 td72"><p class="p12 ft13">Black People living in</p></td>
+				<td class="tr7 td70"><p class="p0 ft7">&nbsp;</p></td>
+				<td class="tr7 td71"><p class="p0 ft7">&nbsp;</p></td>
+			</tr>
+			<tr>
+				<td class="tr26 td54"></td>
+				<td colspan="2" rowspan="2" class="tr27 td79"><p class="p10 ft9">The Enterprise is</p></td>
+				<td class="tr26 td61"><p class="p0 ft27">&nbsp;</p></td>
+				<td class="tr26 td60"><p class="p0 ft27">&nbsp;</p></td>
+				<td rowspan="2" class="tr27 td62"><p class="p0 ft13">Black Designated Group Owned as per Amended</p></td>
+				<td rowspan="2" class="tr22 td80"><p class="p15 ft14">{{ formData.percentageBlackRuralAreas }}</p></td>
+				<td rowspan="2" class="tr22 td74"><p class="p0 ft0">&nbsp;</p></td>
+			</tr>
+			<tr>
+				<td class="tr8 td54"></td>
+				<td class="tr8 td81"><p class="p13 ft20">{{ formData.percentageBlackDesignatedGroupEnterprise }} %</p></td>
+				<td class="tr8 td82"><p class="p0 ft0">&nbsp;</p></td>
+			</tr>
+			<tr>
+				<td class="tr18 td54"></td>
+				<td class="tr18 td18"><p class="p0 ft24">&nbsp;</p></td>
+				<td colspan="4" class="tr18 td83"><p class="p10 ft28">Code Series 100 of the</p></td>
+				<td class="tr18 td62"><p class="p0 ft28">Amended Codes of Good Practice issued under</p></td>
+				<td class="tr18 td69"><p class="p12 ft28">Rural areas %</p></td>
+				<td class="tr18 td70"><p class="p0 ft24">&nbsp;</p></td>
+				<td class="tr18 td71"><p class="p0 ft24">&nbsp;</p></td>
+			</tr>
+			<tr>
+				<td class="tr17 td54"></td>
+				<td class="tr17 td18"><p class="p0 ft29">&nbsp;</p></td>
+				<td colspan="5" rowspan="2" class="tr28 td55"><p class="p10 ft30">section 9 (1) of <nobr>B-BBEE</nobr> Act No 53 of 2003 as Amended by Act No 46 of</p></td>
+				<td class="tr17 td69"><p class="p0 ft29">&nbsp;</p></td>
+				<td class="tr17 td70"><p class="p0 ft29">&nbsp;</p></td>
+				<td class="tr17 td71"><p class="p0 ft29">&nbsp;</p></td>
+			</tr>
+			<tr>
+				<td class="tr5 td54"></td>
+				<td class="tr5 td18"><p class="p0 ft5">&nbsp;</p></td>
+				<td rowspan="2" class="tr8 td72"><p class="p12 ft13">Black Military Veterans %</p></td>
+				<td rowspan="2" class="tr8 td73"><p class="p15 ft14">{{ formData.percentageBlackMilitaryVeterans }}</p></td>
+				<td class="tr5 td71"><p class="p0 ft5">&nbsp;</p></td>
+			</tr>
+			<tr>
+				<td class="tr7 td54"></td>
+				<td class="tr23 td18"><p class="p0 ft26">&nbsp;</p></td>
+				<td rowspan="2" class="tr15 td59"><p class="p10 ft13">2013;</p></td>
+				<td class="tr23 td60"><p class="p0 ft26">&nbsp;</p></td>
+				<td class="tr23 td61"><p class="p0 ft26">&nbsp;</p></td>
+				<td class="tr23 td60"><p class="p0 ft26">&nbsp;</p></td>
+				<td class="tr23 td62"><p class="p0 ft26">&nbsp;</p></td>
+				<td class="tr7 td74"><p class="p0 ft7">&nbsp;</p></td>
+			</tr>
+			<tr>
+				<td class="tr5 td54"></td>
+				<td class="tr17 td18"><p class="p0 ft29">&nbsp;</p></td>
+				<td class="tr17 td60"><p class="p0 ft29">&nbsp;</p></td>
+				<td class="tr17 td61"><p class="p0 ft29">&nbsp;</p></td>
+				<td class="tr17 td60"><p class="p0 ft29">&nbsp;</p></td>
+				<td class="tr17 td62"><p class="p0 ft29">&nbsp;</p></td>
+				<td class="tr5 td72"><p class="p0 ft5">&nbsp;</p></td>
+				<td class="tr5 td78"><p class="p0 ft5">&nbsp;</p></td>
+				<td class="tr5 td74"><p class="p0 ft5">&nbsp;</p></td>
+			</tr>
+			<tr>
+				<td class="tr29 td54"></td>
+				<td class="tr29 td18"><p class="p0 ft0">&nbsp;</p></td>
+				<td colspan="5" class="tr29 td55"><p class="p0 ft0">&nbsp;</p></td>
+				<td colspan="2" class="tr29 td84"><p class="p0 ft0">&nbsp;</p></td>
+				<td class="tr29 td85"><p class="p0 ft0">&nbsp;</p></td>
+			</tr>
+			<tr>
+				<td class="tr11 td54"></td>
+				<td class="tr11 td18"><p class="p0 ft0">&nbsp;</p></td>
+				<td colspan="8" class="tr11 td86"><p class="p10 ft9">Based on the Financial Statements/Management Accounts and other information available on the latest nancial <nobr>year-end</nobr></p></td>
+			</tr>
+			</tbody></table>
+			<p class="p16 ft13"><span class="ft8">15</span><span class="ft31">of </span><span class="ft32">R {{ formData.financialYearEndAmount }}</span><span class="ft33"> , </span>the annual Total Revenue was R 10 000 000.00 <span class="ft12">(Ten Million Rand) </span>or less;</p>
+			</div>
+			<div id="id1_1_2">
+			<p class="p16 ft8">2</p>
+			<p class="p16 ft34">3</p>
+			<p class="p16 ft35">4</p>
+			<p class="p16 ft35">5</p>
+			<p class="p16 ft8">6</p>
+			<p class="p17 ft8">10</p>
+			<p class="p18 ft8">11</p>
+			<p class="p19 ft8">12</p>
+			<p class="p20 ft8">13</p>
+			<p class="p21 ft8">14</p>
+			</div>
+			</div>
+			<div id="id1_2">
+			<div id="id1_2_1">
+			<table class="t3" cellspacing="0" cellpadding="0">
+			<tbody><tr>
+				<td class="tr2 td87"><p class="p22 ft13">100% Black Owned</p></td>
+				<td class="tr2 td88"><p class="p23 ft12"><span class="ft19">Level One </span>(135% <nobr>B-BBEE</nobr> procurement recognition level)</p></td>
+				<td class="tr2 td89">{{ formData.enterpriseOwnership == '100BlackOwnedFounderCEO' ? 'X': ''}}</td>
+			</tr>
+			<tr>
+				<td class="tr20 td90"><p class="p0 ft22">&nbsp;</p></td>
+				<td class="tr20 td91"><p class="p0 ft22">&nbsp;</p></td>
+				<td class="tr20 td92"><p class="p0 ft22">&nbsp;</p></td>
+			</tr>
+			<tr>
+				<td class="tr2 td93"><p class="p24 ft13">At least 51% Black Owned</p></td>
+				<td class="tr2 td94"><p class="p23 ft12"><span class="ft19">Level Two </span>(125% <nobr>B-BBEE</nobr> procurement recognition level)</p></td>
+				<td class="tr2 td95">{{ formData.enterpriseOwnership == '51moreBlackOwned'? 'X': '' }}</td>
+			</tr>
+			<tr>
+				<td class="tr5 td90"><p class="p0 ft5">&nbsp;</p></td>
+				<td class="tr5 td91"><p class="p0 ft5">&nbsp;</p></td>
+				<td class="tr5 td92"><p class="p0 ft5">&nbsp;</p></td>
+			</tr>
+			<tr>
+				<td class="tr2 td93"><p class="p24 ft13">Less than 51% Black Owned</p></td>
+				<td class="tr2 td94"><p class="p23 ft12"><span class="ft19">Level Four </span>(100% <nobr>B-BBEE</nobr> procurement recognition level)</p></td>
+				<td class="tr2 td95">{{ formData.enterpriseOwnership == '51LessBlackOwned'? 'X': '' }}</td>
+			</tr>
+			<tr>
+				<td class="tr5 td90"><p class="p0 ft5">&nbsp;</p></td>
+				<td class="tr5 td91"><p class="p0 ft5">&nbsp;</p></td>
+				<td class="tr5 td96"><p class="p0 ft5">&nbsp;</p></td>
+			</tr>
+			</tbody></table>
+			<p class="p25 ft13">I know and understand the contents of this adavit and I have no objection to take the prescribed oath and consider the oath binding on my conscience and on the Owners of the Enterprise which I represent in this matter.</p>
+			<table class="t4" cellspacing="0" cellpadding="0">
+			<tbody><tr>
+				<td class="tr2 td97"><p class="p0 ft0">&nbsp;</p></td>
+				<td rowspan="2" class="tr10 td98"><p class="p15 ft13">I, the undersigned,</p></td>
+				<td colspan="2" class="tr2 td99"><p class="p26 ft8">18</p></td>
+				<td class="tr2 td100"><p class="p0 ft0">&nbsp;</p></td>
+			</tr>
+			<tr>
+				<td rowspan="2" class="tr16 td97"><p class="p27 ft8">17</p></td>
+				<td class="tr21 td101"><p class="p0 ft25">&nbsp;</p></td>
+				<td class="tr21 td102"><p class="p0 ft25">&nbsp;</p></td>
+				<td class="tr21 td100"><p class="p0 ft25">&nbsp;</p></td>
+			</tr>
+			<tr>
+				<td class="tr13 td103"><p class="p15 ft36">{{ formData.consentFullName }}</p></td>
+				<td class="tr13 td101"><p class="p0 ft13">with identity number</p></td>
+				<td class="tr13 td104"><p class="p11 ft37">{{ formData.consentIdNumber }}</p></td>
+				<td class="tr13 td100"><p class="p0 ft9"><span class="ft11">, </span>hereby declare under oath as follows:</p></td>
+			</tr>
+			<tr>
+				<td class="tr30 td97"><p class="p0 ft38">&nbsp;</p></td>
+				<td class="tr30 td103"><p class="p0 ft38">&nbsp;</p></td>
+				<td class="tr30 td101"><p class="p0 ft38">&nbsp;</p></td>
+				<td class="tr30 td104"><p class="p0 ft38">&nbsp;</p></td>
+				<td class="tr30 td100"><p class="p0 ft38">&nbsp;</p></td>
+			</tr>
+			</tbody></table>
+			<p class="p28 ft13">1. The contents of this statement are to the best of my knowledge a true reection of the facts.</p>
+			<p class="p29 ft13">2. I am a Member / Director / Owner of the following enterprise and am duly authorised to act on its behalf:</p>
+			<p class="p30 ft13">Deponent Signature:</p>
+			<p class="p31 ft13">Date:</p>
+			</div>
+			<div id="id1_2_2">
+			<table class="t5" cellspacing="0" cellpadding="0">
+			<tbody><tr>
+				<td class="tr31 td54"></td>
+				<td class="tr31 td105"><p class="p32 ft8">16</p></td>
+				<td rowspan="2" class="tr32 td106"><!--[if lte IE 7]><P style="margin-left:0px;margin-top:0px;margin-right:-43px;margin-bottom:0px;" class="p33 ft39"><![endif]--><!--[if gte IE 8]><P style="margin-left:-43px;margin-top:0px;margin-right:0px;margin-bottom:43px;" class="p33 ft39"><![endif]--><!--[if ! IE]--><p style="margin-left:-22px;margin-top:22px;margin-right:-21px;margin-bottom:21px;" class="p33 ft39"><!--[endif]-->Select</p></td>
+			</tr>
+			<tr>
+				<td class="tr9 td54"></td>
+				<td rowspan="2" class="tr33 td105"><p class="p32 ft8">16</p></td>
+			</tr>
+			<tr>
+				<td class="tr6 td54"></td>
+				<td rowspan="2" class="tr24 td106"><!--[if lte IE 7]><P style="margin-left:0px;margin-top:0px;margin-right:-19px;margin-bottom:0px;" class="p34 ft39"><![endif]--><!--[if gte IE 8]><P style="margin-left:-19px;margin-top:0px;margin-right:0px;margin-bottom:19px;" class="p34 ft39"><![endif]--><!--[if ! IE]--><p style="margin-left:-10px;margin-top:10px;margin-right:-9px;margin-bottom:9px;" class="p34 ft39"><!--[endif]-->Radio</p></td>
+			</tr>
+			<tr>
+				<td class="tr4 td54"></td>
+				<td rowspan="2" class="tr33 td105"><p class="p32 ft8">16</p></td>
+			</tr>
+			<tr>
+				<td class="tr19 td54"></td>
+				<td class="tr19 td106"><p class="p0 ft23">&nbsp;</p></td>
+			</tr>
+			</tbody></table>
+			</div>
+			</div>
+			<div id="id1_3">
+			<p class="p16 ft40">DEFINITION OF “BLACK PEOPLE”</p>
+			<p class="p35 ft41">As per the <nobr>Broad-Based</nobr> Black Economic Empowerment Act 53 of 2003 as Amended by Act No 46 of 2013 “Black People” is a generic term which means Africans, Coloureds and Indians – (a) Who are citizens of the Republic of South Africa by birth or descent; or (b) Who became citizens of the Republic of South Africa by naturalization (i). Before 27 April 1994; or (ii). On or after 27 April 1994 and who would have been entitled to acquire citizenship by naturalization prior to that date</p>
+			<p class="p36 ft40">DEFINITION OF “BLACK DESIGNATED GROUPS”</p>
+			<p class="p37 ft44"><span class="ft42">(a)</span><span class="ft43">unemployed black people not attending and not required by law to attend an educational institution and not awaiting admission to an educational institution;</span></p>
+			<p class="p37 ft44"><span class="ft44">(b)</span><span class="ft43">Black people who are youth as dened in the National Youth Commission Act of 1996;</span></p>
+			<p class="p37 ft44"><span class="ft42">(c)</span><span class="ft43">Black people who are persons with disabilities as dened in the Code of Good Practice on employment of people with disabilities issued under the Employment Equity Act;</span></p>
+			<p class="p37 ft44"><span class="ft44">(d)</span><span class="ft43">Black people living in rural and under developed areas;</span></p>
+			<p class="p37 ft44"><span class="ft42">(e)</span><span class="ft45">Black military veterans who qualies to be called a military veteran in terms of the Military Veterans Act 18 of 2011;”</span></p>
+			<p class="p38 ft46">Valid for 12 Months from the date signed by the commissioner</p>
+			</div>
+			
+			</div>
+			
   </div>
 </template>
 <script>
@@ -699,292 +786,264 @@ div.cls_019 {
 };
 </script>
 <style lang="css">
-span.cls_002 {
-  font-family: Arial, serif;
-  font-size: 15.1px;
-  color: rgb(229, 12, 128);
-  font-weight: bold;
-  font-style: normal;
-  text-decoration: none;
-}
-div.cls_002 {
-  font-family: Arial, serif;
-  font-size: 15.1px;
-  color: rgb(229, 12, 128);
-  font-weight: bold;
-  font-style: normal;
-  text-decoration: none;
-}
-span.cls_003 {
-  font-family: Arial, serif;
-  font-size: 12.6px;
-  color: rgb(229, 12, 128);
-  font-weight: normal;
-  font-style: normal;
-  text-decoration: none;
-}
-div.cls_003 {
-  font-family: Arial, serif;
-  font-size: 12.6px;
-  color: rgb(229, 12, 128);
-  font-weight: normal;
-  font-style: normal;
-  text-decoration: none;
-}
-span.cls_004 {
-  font-family: Arial, serif;
-  font-size: 12.1px;
-  color: rgb(229, 12, 128);
-  font-weight: bold;
-  font-style: normal;
-  text-decoration: none;
-}
-div.cls_004 {
-  font-family: Arial, serif;
-  font-size: 12.1px;
-  color: rgb(229, 12, 128);
-  font-weight: bold;
-  font-style: normal;
-  text-decoration: none;
-}
-span.cls_018 {
-  font-family: Arial, serif;
-  font-size: 12.1px;
-  color: rgb(199, 199, 198);
-  font-weight: bold;
-  font-style: normal;
-  text-decoration: none;
-}
-div.cls_018 {
-  font-family: Arial, serif;
-  font-size: 12.1px;
-  color: rgb(199, 199, 198);
-  font-weight: bold;
-  font-style: normal;
-  text-decoration: none;
-}
-span.cls_005 {
-  font-family: Arial, serif;
-  font-size: 9.1px;
-  color: rgb(229, 12, 128);
-  font-weight: normal;
-  font-style: normal;
-  text-decoration: none;
-}
-div.cls_005 {
-  font-family: Arial, serif;
-  font-size: 9.1px;
-  color: rgb(229, 12, 128);
-  font-weight: normal;
-  font-style: normal;
-  text-decoration: none;
-}
-span.cls_006 {
-  font-family: Arial, serif;
-  font-size: 12.1px;
-  color: rgb(43, 42, 41);
-  font-weight: bold;
-  font-style: normal;
-  text-decoration: none;
-}
-div.cls_006 {
-  font-family: Arial, serif;
-  font-size: 12.1px;
-  color: rgb(43, 42, 41);
-  font-weight: bold;
-  font-style: normal;
-  text-decoration: none;
-}
-span.cls_007 {
-  font-family: Arial, serif;
-  font-size: 10.1px;
-  color: rgb(43, 42, 41);
-  font-weight: bold;
-  font-style: normal;
-  text-decoration: none;
-}
-div.cls_007 {
-  font-family: Arial, serif;
-  font-size: 10.1px;
-  color: rgb(43, 42, 41);
-  font-weight: bold;
-  font-style: normal;
-  text-decoration: none;
-}
-span.cls_008 {
-  font-family: Arial, serif;
-  font-size: 11.1px;
-  color: rgb(229, 12, 128);
-  font-weight: bold;
-  font-style: normal;
-  text-decoration: none;
-}
-div.cls_008 {
-  font-family: Arial, serif;
-  font-size: 11.1px;
-  color: rgb(229, 12, 128);
-  font-weight: bold;
-  font-style: normal;
-  text-decoration: none;
-}
-span.cls_009 {
-  font-family: Arial, serif;
-  font-size: 10.1px;
-  color: rgb(229, 12, 128);
-  font-weight: normal;
-  font-style: normal;
-  text-decoration: none;
-}
-div.cls_009 {
-  font-family: Arial, serif;
-  font-size: 10.1px;
-  color: rgb(229, 12, 128);
-  font-weight: normal;
-  font-style: normal;
-  text-decoration: none;
-}
-span.cls_010 {
-  font-family: Arial, serif;
-  font-size: 10.1px;
-  color: rgb(229, 12, 128);
-  font-weight: normal;
-  font-style: italic;
-  text-decoration: none;
-}
-div.cls_010 {
-  font-family: Arial, serif;
-  font-size: 10.1px;
-  color: rgb(229, 12, 128);
-  font-weight: normal;
-  font-style: italic;
-  text-decoration: none;
-}
-span.cls_015 {
-  font-family: Arial, serif;
-  font-size: 10.1px;
-  color: rgb(229, 12, 128);
-  font-weight: bold;
-  font-style: normal;
-  text-decoration: none;
-}
-div.cls_015 {
-  font-family: Arial, serif;
-  font-size: 10.1px;
-  color: rgb(229, 12, 128);
-  font-weight: bold;
-  font-style: normal;
-  text-decoration: none;
-}
-span.cls_011 {
-  font-family: Arial, serif;
-  font-size: 10.1px;
-  color: rgb(43, 42, 41);
-  font-weight: normal;
-  font-style: normal;
-  text-decoration: none;
-}
-div.cls_011 {
-  font-family: Arial, serif;
-  font-size: 10.1px;
-  color: rgb(43, 42, 41);
-  font-weight: normal;
-  font-style: normal;
-  text-decoration: none;
-}
-span.cls_012 {
-  font-family: Arial, serif;
-  font-size: 11.1px;
-  color: rgb(43, 42, 41);
-  font-weight: bold;
-  font-style: normal;
-  text-decoration: none;
-}
-div.cls_012 {
-  font-family: Arial, serif;
-  font-size: 11.1px;
-  color: rgb(43, 42, 41);
-  font-weight: bold;
-  font-style: normal;
-  text-decoration: none;
-}
-span.cls_014 {
-  font-family: Arial, serif;
-  font-size: 10.1px;
-  color: rgb(43, 42, 41);
-  font-weight: bold;
-  font-style: normal;
-  text-decoration: none;
-}
-div.cls_014 {
-  font-family: Arial, serif;
-  font-size: 10.1px;
-  color: rgb(43, 42, 41);
-  font-weight: bold;
-  font-style: normal;
-  text-decoration: none;
-}
-span.cls_013 {
-  font-family: Arial, serif;
-  font-size: 10.1px;
-  color: rgb(229, 12, 128);
-  font-weight: bold;
-  font-style: normal;
-  text-decoration: none;
-}
-div.cls_013 {
-  font-family: Arial, serif;
-  font-size: 10.1px;
-  color: rgb(229, 12, 128);
-  font-weight: bold;
-  font-style: normal;
-  text-decoration: none;
-}
-span.cls_016 {
-  font-family: Arial, serif;
-  font-size: 5px;
-  color: rgb(229, 12, 128);
-  font-weight: bold;
-  font-style: normal;
-  text-decoration: none;
-}
-div.cls_016 {
-  font-family: Arial, serif;
-  font-size: 5px;
-  color: rgb(229, 12, 128);
-  font-weight: bold;
-  font-style: normal;
-  text-decoration: none;
-}
-span.cls_017 {
-  font-family: Arial, serif;
-  font-size: 5px;
-  color: rgb(229, 12, 128);
-  font-weight: normal;
-  font-style: normal;
-  text-decoration: none;
-}
-div.cls_017 {
-  font-family: Arial, serif;
-  font-size: 5px;
-  color: rgb(229, 12, 128);
-  font-weight: normal;
-  font-style: normal;
-  text-decoration: none;
-}
-span.cls_019 {
-  font-family: Arial, serif;
-  font-size: 8.1px;
-  color: rgb(229, 12, 128);
-  font-weight: bold;
-  font-style: normal;
-  text-decoration: none;
-}
-div.cls_019 {
-  font-family: Arial, serif;
-  font-size: 8.1px;
-  color: rgb(229, 12, 128);
-  font-weight: bold;
-  font-style: normal;
-  text-decoration: none;
-}
+		
+		body {margin-top: 0px;margin-left: 0px;}
+		
+		#page_1 {position:relative; overflow: hidden;margin: 36px 0px 12px 17px;padding: 0px;border: none;width: 776px;}
+		#page_1 #id1_1 {border:none;margin: 0px 0px 0px 5px;padding: 0px;border:none;width: 771px;overflow: hidden;}
+		#page_1 #id1_1 #id1_1_1 {float:left;border:none;margin: 0px 0px 0px 0px;padding: 0px;border:none;width: 728px;overflow: hidden;}
+		#page_1 #id1_1 #id1_1_2 {float:left;border:none;margin: 166px 0px 0px 0px;padding: 0px;border:none;width: 43px;overflow: hidden;}
+		#page_1 #id1_2 {border:none;margin: 0px 0px 0px 5px;padding: 0px;border:none;width: 764px;overflow: hidden;}
+		#page_1 #id1_2 #id1_2_1 {float:left;border:none;margin: 16px 0px 0px 0px;padding: 0px;border:none;width: 728px;overflow: hidden;}
+		#page_1 #id1_2 #id1_2_2 {float:left;border:none;margin: 0px 0px 0px 0px;padding: 0px;border:none;width: 36px;overflow: hidden;}
+		#page_1 #id1_3 {border:none;margin: 35px 0px 0px 41px;padding: 0px;border:none;width: 735px;overflow: hidden;}
+		#page_1 #id1_4 {border:none;margin: 21px 0px 0px 243px;padding: 0px;border:none;width: 533px;overflow: hidden;}
+		
+		#page_1 #p1dimg1 {position:absolute;top:0px;left:0px;z-index:-1;width:756px;height:906px;}
+		#page_1 #p1dimg1 #p1img1 {width:756px;height:906px;}
+		
+		
+		
+		
+		.dclr {clear:both;float:none;height:1px;margin:0px;padding:0px;overflow:hidden;}
+		
+		.ft0{font: 1px 'Arial';line-height: 1px;}
+		.ft1{font: bold 20px 'Arial';color: #e9008a;line-height: 24px;}
+		.ft2{font: 15px 'Arial';color: #e9008a;line-height: 17px;}
+		.ft3{font: bold 16px 'Arial';color: #b3b3b3;line-height: 19px;}
+		.ft4{font: bold 14px 'Arial';color: #e9008a;line-height: 16px;}
+		.ft5{font: 1px 'Arial';line-height: 7px;}
+		.ft6{font: 1px 'Arial';line-height: 10px;}
+		.ft7{font: 1px 'Arial';line-height: 11px;}
+		.ft8{font: bold 16px 'Arial';line-height: 19px;}
+		.ft9{font: 12px 'Arial';color: #e9008a;line-height: 15px;}
+		.ft10{font: bold 15px 'Arial';color: #e9008a;line-height: 18px;}
+		.ft11{font: bold 12px 'Arial';line-height: 15px;}
+		.ft12{font: italic 13px 'Arial';color: #e9008a;line-height: 16px;}
+		.ft13{font: 13px 'Arial';color: #e9008a;line-height: 16px;}
+		.ft14{font: bold 13px 'Arial';line-height: 16px;}
+		.ft15{font: italic 12px 'Arial';color: #e9008a;line-height: 15px;}
+		.ft16{font: 1px 'Arial';line-height: 13px;}
+		.ft17{font: 13px 'Arial';color: #e9008a;line-height: 13px;}
+		.ft18{font: bold 12px 'Arial';line-height: 13px;}
+		.ft19{font: bold 13px 'Arial';color: #e9008a;line-height: 16px;}
+		.ft20{font: bold 14px 'Arial';background-color: #f1f91c;line-height: 16px;}
+		.ft21{font: 12px 'Arial';color: #e9008a;line-height: 14px;}
+		.ft22{font: 1px 'Arial';line-height: 6px;}
+		.ft23{font: 1px 'Arial';line-height: 5px;}
+		.ft24{font: 1px 'Arial';line-height: 14px;}
+		.ft25{font: 1px 'Arial';line-height: 9px;}
+		.ft26{font: 1px 'Arial';line-height: 12px;}
+		.ft27{font: 1px 'Arial';line-height: 4px;}
+		.ft28{font: 13px 'Arial';color: #e9008a;line-height: 14px;}
+		.ft29{font: 1px 'Arial';line-height: 8px;}
+		.ft30{font: 13px 'Arial';color: #e9008a;line-height: 15px;}
+		.ft31{font: 13px 'Arial';color: #e9008a;margin-left: 15px;line-height: 16px;}
+		.ft32{font: bold 15px 'Arial';background-color: #f1f91c;line-height: 18px;}
+		.ft33{font: 13px 'Arial';line-height: 16px;}
+		.ft34{font: bold 16px 'Arial';line-height: 18px;}
+		.ft35{font: bold 16px 'Arial';line-height: 17px;}
+		.ft36{font: bold 12px 'Arial';background-color: #f1f91c;line-height: 15px;}
+		.ft37{font: bold 13px 'Arial';background-color: #f1f91c;line-height: 16px;}
+		.ft38{font: 1px 'Arial';line-height: 2px;}
+		.ft39{font: 13px 'Arial';line-height: 15px;}
+		.ft40{font: bold 7px 'Arial';color: #e9008a;line-height: 7px;}
+		.ft41{font: 6px 'Arial';color: #e9008a;line-height: 9px;}
+		.ft42{font: 6px 'Arial';color: #e9008a;line-height: 6px;}
+		.ft43{font: 7px 'Arial';color: #e9008a;margin-left: 1px;line-height: 7px;}
+		.ft44{font: 7px 'Arial';color: #e9008a;line-height: 7px;}
+		.ft45{font: 7px 'Arial';color: #e9008a;margin-left: 2px;line-height: 7px;}
+		.ft46{font: bold 11px 'Arial';color: #e9008a;line-height: 14px;}
+		.ft47{font: 8px 'Calibri';line-height: 10px;}
+		
+		.p0{text-align: left;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+		.p1{text-align: center;padding-right: 119px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+		.p2{text-align: left;padding-left: 41px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+		.p3{text-align: center;padding-right: 243px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+		.p4{text-align: right;padding-right: 22px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+		.p5{text-align: right;padding-right: 14px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+		.p6{text-align: left;padding-left: 7px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+		.p7{text-align: right;padding-right: 5px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+		.p8{text-align: left;padding-left: 8px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+		.p9{text-align: left;padding-left: 6px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+		.p10{text-align: left;padding-left: 20px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+		.p11{text-align: right;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+		.p12{text-align: left;padding-left: 9px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+		.p13{text-align: right;padding-right: 2px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+		.p14{text-align: left;padding-left: 1px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+		.p15{text-align: left;padding-left: 3px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+		.p16{text-align: left;margin-top: 0px;margin-bottom: 0px;}
+		.p17{text-align: left;margin-top: 103px;margin-bottom: 0px;}
+		.p18{text-align: left;margin-top: 11px;margin-bottom: 0px;}
+		.p19{text-align: left;margin-top: 8px;margin-bottom: 0px;}
+		.p20{text-align: left;margin-top: 13px;margin-bottom: 0px;}
+		.p21{text-align: left;margin-top: 24px;margin-bottom: 0px;}
+		.p22{text-align: left;padding-left: 10px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+		.p23{text-align: left;padding-left: 17px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+		.p24{text-align: left;padding-left: 11px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+		.p25{text-align: left;padding-left: 33px;padding-right: 38px;margin-top: 10px;margin-bottom: 0px;}
+		.p26{text-align: right;padding-right: 37px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+		.p27{text-align: right;padding-right: 12px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+		.p28{text-align: left;padding-left: 33px;margin-top: 16px;margin-bottom: 0px;}
+		.p29{text-align: left;padding-left: 33px;margin-top: 1px;margin-bottom: 0px;}
+		.p30{text-align: left;padding-left: 35px;margin-top: 49px;margin-bottom: 0px;}
+		.p31{text-align: left;padding-left: 35px;margin-top: 15px;margin-bottom: 0px;}
+		.p32{text-align: right;padding-right: 3px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+		.p33{text-align: left;margin-top: 0px;margin-bottom: 0px;-webkit-transform: rotate(270deg);-moz-transform: rotate(270deg);filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);direction: rtl;block-progression: lr;width:58px;height:15px;}
+		.p34{text-align: left;margin-top: 0px;margin-bottom: 0px;-webkit-transform: rotate(270deg);-moz-transform: rotate(270deg);filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);direction: rtl;block-progression: lr;width:34px;height:15px;}
+		.p35{text-align: left;padding-right: 53px;margin-top: 1px;margin-bottom: 0px;}
+		.p36{text-align: left;margin-top: 4px;margin-bottom: 0px;}
+		.p37{text-align: left;margin-top: 1px;margin-bottom: 0px;}
+		.p38{text-align: left;margin-top: 10px;margin-bottom: 0px;}
+		
+		.td0{border-left: #808080 1px solid;border-right: #808080 1px solid;border-top: #808080 1px solid;padding: 0px;margin: 0px;width: 120px;vertical-align: bottom;}
+		.td1{padding: 0px;margin: 0px;width: 14px;vertical-align: bottom;}
+		.td2{padding: 0px;margin: 0px;width: 123px;vertical-align: bottom;}
+		.td3{padding: 0px;margin: 0px;width: 410px;vertical-align: bottom;}
+		.td4{border-left: #808080 1px solid;border-right: #808080 1px solid;padding: 0px;margin: 0px;width: 120px;vertical-align: bottom;}
+		.td5{padding: 0px;margin: 0px;width: 533px;vertical-align: bottom;}
+		.td6{border-left: #808080 1px solid;border-right: #808080 1px solid;border-bottom: #808080 1px solid;padding: 0px;margin: 0px;width: 120px;vertical-align: bottom;}
+		.td7{border-bottom: #e9008a 1px solid;padding: 0px;margin: 0px;width: 123px;vertical-align: bottom;}
+		.td8{border-bottom: #e9008a 1px solid;padding: 0px;margin: 0px;width: 410px;vertical-align: bottom;}
+		.td9{padding: 0px;margin: 0px;width: 4px;vertical-align: bottom;}
+		.td10{padding: 0px;margin: 0px;width: 192px;vertical-align: bottom;}
+		.td11{padding: 0px;margin: 0px;width: 230px;vertical-align: bottom;}
+		.td12{padding: 0px;margin: 0px;width: 120px;vertical-align: bottom;}
+		.td13{padding: 0px;margin: 0px;width: 10px;vertical-align: bottom;}
+		.td14{padding: 0px;margin: 0px;width: 126px;vertical-align: bottom;}
+		.td15{padding: 0px;margin: 0px;width: 422px;vertical-align: bottom;}
+		.td16{padding: 0px;margin: 0px;width: 10px;vertical-align: bottom;background: #f1f91c;}
+		.td17{padding: 0px;margin: 0px;width: 117px;vertical-align: bottom;background: #f1f91c;}
+		.td18{padding: 0px;margin: 0px;width: 9px;vertical-align: bottom;}
+		.td19{padding: 0px;margin: 0px;width: 112px;vertical-align: bottom;}
+		.td20{padding: 0px;margin: 0px;width: 5px;vertical-align: bottom;}
+		.td21{border-bottom: #e9008a 1px solid;padding: 0px;margin: 0px;width: 4px;vertical-align: bottom;}
+		.td22{border-bottom: #e9008a 1px solid;padding: 0px;margin: 0px;width: 192px;vertical-align: bottom;}
+		.td23{border-bottom: #e9008a 1px solid;padding: 0px;margin: 0px;width: 230px;vertical-align: bottom;}
+		.td24{border-bottom: #e9008a 1px solid;padding: 0px;margin: 0px;width: 120px;vertical-align: bottom;}
+		.td25{border-bottom: #e9008a 1px solid;padding: 0px;margin: 0px;width: 10px;vertical-align: bottom;}
+		.td26{border-bottom: #e9008a 1px solid;padding: 0px;margin: 0px;width: 112px;vertical-align: bottom;}
+		.td27{border-bottom: #e9008a 1px solid;padding: 0px;margin: 0px;width: 5px;vertical-align: bottom;}
+		.td28{border-bottom: #e9008a 1px solid;padding: 0px;margin: 0px;width: 9px;vertical-align: bottom;}
+		.td29{padding: 0px;margin: 0px;width: 4px;vertical-align: bottom;background: #e9008a;}
+		.td30{border-bottom: #fafaf9 1px solid;padding: 0px;margin: 0px;width: 192px;vertical-align: bottom;background: #fafaf9;}
+		.td31{padding: 0px;margin: 0px;width: 230px;vertical-align: bottom;background: #fafaf9;}
+		.td32{padding: 0px;margin: 0px;width: 120px;vertical-align: bottom;background: #fafaf9;}
+		.td33{padding: 0px;margin: 0px;width: 10px;vertical-align: bottom;background: #fafaf9;}
+		.td34{padding: 0px;margin: 0px;width: 112px;vertical-align: bottom;background: #fafaf9;}
+		.td35{padding: 0px;margin: 0px;width: 5px;vertical-align: bottom;background: #fafaf9;}
+		.td36{border-right: #e9008a 1px solid;padding: 0px;margin: 0px;width: 8px;vertical-align: bottom;background: #fafaf9;}
+		.td37{border-bottom: #e9008a 1px solid;padding: 0px;margin: 0px;width: 4px;vertical-align: bottom;background: #e9008a;}
+		.td38{border-bottom: #fafaf9 1px solid;padding: 0px;margin: 0px;width: 230px;vertical-align: bottom;background: #f1f91c;}
+		.td39{border-bottom: #fafaf9 1px solid;padding: 0px;margin: 0px;width: 120px;vertical-align: bottom;background: #f1f91c;}
+		.td40{border-bottom: #fafaf9 1px solid;padding: 0px;margin: 0px;width: 10px;vertical-align: bottom;background: #f1f91c;}
+		.td41{border-bottom: #fafaf9 1px solid;padding: 0px;margin: 0px;width: 112px;vertical-align: bottom;background: #f1f91c;}
+		.td42{border-bottom: #fafaf9 1px solid;padding: 0px;margin: 0px;width: 5px;vertical-align: bottom;background: #fafaf9;}
+		.td43{border-right: #e9008a 1px solid;border-bottom: #fafaf9 1px solid;padding: 0px;margin: 0px;width: 8px;vertical-align: bottom;background: #fafaf9;}
+		.td44{padding: 0px;margin: 0px;width: 192px;vertical-align: bottom;background: #fafaf9;}
+		.td45{padding: 0px;margin: 0px;width: 360px;vertical-align: bottom;background: #f1f91c;}
+		.td46{padding: 0px;margin: 0px;width: 112px;vertical-align: bottom;background: #f1f91c;}
+		.td47{border-bottom: #e9008a 1px solid;padding: 0px;margin: 0px;width: 192px;vertical-align: bottom;background: #fafaf9;}
+		.td48{border-bottom: #e9008a 1px solid;padding: 0px;margin: 0px;width: 230px;vertical-align: bottom;background: #fafaf9;}
+		.td49{border-bottom: #e9008a 1px solid;padding: 0px;margin: 0px;width: 120px;vertical-align: bottom;background: #fafaf9;}
+		.td50{border-bottom: #e9008a 1px solid;padding: 0px;margin: 0px;width: 10px;vertical-align: bottom;background: #fafaf9;}
+		.td51{border-bottom: #e9008a 1px solid;padding: 0px;margin: 0px;width: 112px;vertical-align: bottom;background: #fafaf9;}
+		.td52{border-bottom: #e9008a 1px solid;padding: 0px;margin: 0px;width: 5px;vertical-align: bottom;background: #fafaf9;}
+		.td53{border-right: #e9008a 1px solid;border-bottom: #e9008a 1px solid;padding: 0px;margin: 0px;width: 8px;vertical-align: bottom;background: #fafaf9;}
+		.td54{padding: 0px;margin: 0px;width: 0px;vertical-align: bottom;}
+		.td55{padding: 0px;margin: 0px;width: 455px;vertical-align: bottom;}
+		.td56{padding: 0px;margin: 0px;width: 174px;vertical-align: bottom;}
+		.td57{padding: 0px;margin: 0px;width: 42px;vertical-align: bottom;}
+		.td58{padding: 0px;margin: 0px;width: 31px;vertical-align: bottom;}
+		.td59{padding: 0px;margin: 0px;width: 114px;vertical-align: bottom;}
+		.td60{padding: 0px;margin: 0px;width: 1px;vertical-align: bottom;}
+		.td61{padding: 0px;margin: 0px;width: 41px;vertical-align: bottom;}
+		.td62{padding: 0px;margin: 0px;width: 298px;vertical-align: bottom;}
+		.td63{padding: 0px;margin: 0px;width: 247px;vertical-align: bottom;}
+		.td64{padding: 0px;margin: 0px;width: 42px;vertical-align: bottom;background: #f1f91c;}
+		.td65{padding: 0px;margin: 0px;width: 299px;vertical-align: bottom;}
+		.td66{border-bottom: #e9008a 1px solid;padding: 0px;margin: 0px;width: 174px;vertical-align: bottom;}
+		.td67{border-bottom: #e9008a 1px solid;padding: 0px;margin: 0px;width: 42px;vertical-align: bottom;}
+		.td68{border-bottom: #e9008a 1px solid;padding: 0px;margin: 0px;width: 31px;vertical-align: bottom;}
+		.td69{border-left: #e9008a 1px solid;padding: 0px;margin: 0px;width: 173px;vertical-align: bottom;background: #fafaf9;}
+		.td70{padding: 0px;margin: 0px;width: 42px;vertical-align: bottom;background: #fafaf9;}
+		.td71{border-right: #e9008a 1px solid;padding: 0px;margin: 0px;width: 30px;vertical-align: bottom;background: #fafaf9;}
+		.td72{border-left: #e9008a 1px solid;border-bottom: #fafaf9 1px solid;padding: 0px;margin: 0px;width: 173px;vertical-align: bottom;background: #fafaf9;}
+		.td73{border-bottom: #f1f91c 1px solid;padding: 0px;margin: 0px;width: 42px;vertical-align: bottom;background: #f1f91c;}
+		.td74{border-right: #e9008a 1px solid;border-bottom: #fafaf9 1px solid;padding: 0px;margin: 0px;width: 30px;vertical-align: bottom;background: #fafaf9;}
+		.td75{border-left: #e9008a 1px solid;border-top: #fafaf9 1px solid;padding: 0px;margin: 0px;width: 173px;vertical-align: bottom;background: #fafaf9;}
+		.td76{border-top: #fafaf9 1px solid;padding: 0px;margin: 0px;width: 42px;vertical-align: bottom;background: #fafaf9;}
+		.td77{border-right: #e9008a 1px solid;border-top: #fafaf9 1px solid;padding: 0px;margin: 0px;width: 30px;vertical-align: bottom;background: #fafaf9;}
+		.td78{border-bottom: #fafaf9 1px solid;padding: 0px;margin: 0px;width: 42px;vertical-align: bottom;background: #fafaf9;}
+		.td79{padding: 0px;margin: 0px;width: 115px;vertical-align: bottom;}
+		.td80{border-bottom: #fafaf9 1px solid;padding: 0px;margin: 0px;width: 42px;vertical-align: bottom;background: #f1f91c;}
+		.td81{border-bottom: #f1f91c 1px solid;padding: 0px;margin: 0px;width: 41px;vertical-align: bottom;background: #f1f91c;}
+		.td82{border-bottom: #f1f91c 1px solid;padding: 0px;margin: 0px;width: 1px;vertical-align: bottom;background: #f1f91c;}
+		.td83{padding: 0px;margin: 0px;width: 157px;vertical-align: bottom;}
+		.td84{border-left: #e9008a 1px solid;padding: 0px;margin: 0px;width: 215px;vertical-align: bottom;background: #e9008a;}
+		.td85{border-right: #e9008a 1px solid;padding: 0px;margin: 0px;width: 30px;vertical-align: bottom;background: #e9008a;}
+		.td86{padding: 0px;margin: 0px;width: 702px;vertical-align: bottom;}
+		.td87{border-left: #e9008a 1px solid;border-right: #e9008a 1px solid;border-top: #e9008a 1px solid;padding: 0px;margin: 0px;width: 182px;vertical-align: bottom;}
+		.td88{border-right: #e9008a 1px solid;border-top: #e9008a 1px solid;padding: 0px;margin: 0px;width: 437px;vertical-align: bottom;}
+		.td89{border-right: #e9008a 1px solid;font-weight: 900;text-align: center;font-size: larger; border-top: #e9008a 1px solid;padding: 0px;margin: 0px;width: 58px;vertical-align: bottom;background: #f1f91c;}
+		.td90{border-left: #e9008a 1px solid;border-right: #e9008a 1px solid;border-bottom: #e9008a 1px solid;padding: 0px;margin: 0px;width: 182px;vertical-align: bottom;}
+		.td91{border-right: #e9008a 1px solid;border-bottom: #e9008a 1px solid;padding: 0px;margin: 0px;width: 437px;vertical-align: bottom;}
+		.td92{border-right: #e9008a 1px solid;border-bottom: #f1f91c 1px solid;padding: 0px;margin: 0px;width: 58px;vertical-align: bottom;background: #f1f91c;}
+		.td93{border-left: #e9008a 1px solid;border-right: #e9008a 1px solid;padding: 0px;margin: 0px;width: 182px;vertical-align: bottom;}
+		.td94{border-right: #e9008a 1px solid;padding: 0px;margin: 0px;width: 437px;vertical-align: bottom;}
+		.td95{border-right: #e9008a 1px solid;padding: 0px;font-weight: 900;text-align: center;font-size: larger; margin: 0px;width: 58px;vertical-align: bottom;background: #f1f91c;}
+		.td96{border-right: #e9008a 1px solid;border-bottom: #e9008a 1px solid;padding: 0px;margin: 0px;width: 58px;vertical-align: bottom;background: #f1f91c;}
+		.td97{padding: 0px;margin: 0px;width: 30px;vertical-align: bottom;}
+		.td98{padding: 0px;margin: 0px;width: 122px;vertical-align: bottom;}
+		.td99{padding: 0px;margin: 0px;width: 223px;vertical-align: bottom;}
+		.td100{padding: 0px;margin: 0px;width: 212px;vertical-align: bottom;}
+		.td101{padding: 0px;margin: 0px;width: 119px;vertical-align: bottom;}
+		.td102{padding: 0px;margin: 0px;width: 104px;vertical-align: bottom;}
+		.td103{padding: 0px;margin: 0px;width: 122px;vertical-align: bottom;background: #f1f91c;}
+		.td104{padding: 0px;margin: 0px;width: 104px;vertical-align: bottom;background: #f1f91c;}
+		.td105{padding: 0px;margin: 0px;width: 21px;vertical-align: bottom;}
+		.td106{padding: 0px;margin: 0px;width: 15px;vertical-align: bottom;}
+		
+		.tr0{height: 37px;}
+		.tr1{height: 38px;}
+		.tr2{height: 21px;}
+		.tr3{height: 31px;}
+		.tr4{height: 24px;}
+		.tr5{height: 7px;}
+		.tr6{height: 10px;}
+		.tr7{height: 11px;}
+		.tr8{height: 18px;}
+		.tr9{height: 19px;}
+		.tr10{height: 30px;}
+		.tr11{height: 27px;}
+		.tr12{height: 16px;}
+		.tr13{height: 17px;}
+		.tr14{height: 13px;}
+		.tr15{height: 20px;}
+		.tr16{height: 26px;}
+		.tr17{height: 8px;}
+		.tr18{height: 14px;}
+		.tr19{height: 5px;}
+		.tr20{height: 6px;}
+		.tr21{height: 9px;}
+		.tr22{height: 22px;}
+		.tr23{height: 12px;}
+		.tr24{height: 34px;}
+		.tr25{height: 33px;}
+		.tr26{height: 4px;}
+		.tr27{height: 23px;}
+		.tr28{height: 15px;}
+		.tr29{height: 1px;}
+		.tr30{height: 2px;}
+		.tr31{height: 39px;}
+		.tr32{height: 58px;}
+		.tr33{height: 29px;}
+		
+		.t0{width: 669px;margin-left: 32px;font: 15px 'Arial';color: #e9008a;}
+		.t1{width: 682px;margin-left: 33px;margin-top: 4px;font: 13px 'Arial';color: #e9008a;}
+		.t2{width: 711px;margin-left: 4px;margin-top: 10px;font: 13px 'Arial';color: #e9008a;}
+		.t3{width: 680px;margin-left: 34px;font: 13px 'Arial';color: #e9008a;}
+		.t4{width: 587px;font: bold 12px 'Arial';}
+		.t5{width: 36px;font: bold 16px 'Arial';}
+		
 </style>

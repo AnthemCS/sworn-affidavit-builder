@@ -8,7 +8,7 @@ import { BootstrapVue, IconsPlugin } from "bootstrap-vue";
 window.$ = window.jQuery = $;
 window.axios = axios;
 require("bootstrap");
--Vue.use(VueNoty, {
+ Vue.use(VueNoty, {
   progressBar: false,
   layout: "bottomRight",
   theme: "bootstrap-v4",

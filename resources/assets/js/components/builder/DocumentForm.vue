@@ -1,9 +1,9 @@
 <template>
   <div class="row">
-    <div class="col-12 col-md-6">
+    <div class="col-12 col-md-7">
       <document-pdf :form-data="form"></document-pdf>
     </div>
-    <div class="col-12 offset-md-1 col-md-5">
+    <div class="col-12 offset-md-1 col-md-3">
       <b-form
         @submit="onSubmit"
         @reset="onReset"
@@ -240,7 +240,7 @@
           <b-form-group>
             <b-form-radio-group
               v-model="form.enterpriseOwnership"
-              :options="ownerShipOptions"
+              :options="form.ownerShipOptions"
               name="radio-inline"
               stacked
             ></b-form-radio-group>
@@ -315,12 +315,12 @@ export default {
         enterpriseOwnership: "100BlackOwnedFounderCEO",
         consentFullName: "Name and Surname",
         consentIdNumber: "000000-0000-000",
+        ownerShipOptions: [
+          { text: "100% Black Owned", value: "100BlackOwnedFounderCEO" },
+          { text: "At least 51% Black Owned", value: "51moreBlackOwned" },
+          { text: "Less than 51% Black Owned", value: "51LessBlackOwned" },
+        ],
       },
-      ownerShipOptions: [
-        { text: "100% Black Owned", value: "100BlackOwnedFounderCEO" },
-        { text: "At least 51% Black Owned", value: "51moreBlackOwned" },
-        { text: "Less than 51% Black Owned", value: "51LessBlackOwned" },
-      ],
       show: true,
       loading: false,
       linktoFile: null,
