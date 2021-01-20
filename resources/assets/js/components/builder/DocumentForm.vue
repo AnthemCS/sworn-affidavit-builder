@@ -4,6 +4,9 @@
       <document-pdf :form-data="form"></document-pdf>
     </div>
     <div class="col-12 offset-md-1 col-md-3">
+      <div>
+
+
       <b-form
         @submit="onSubmit"
         @reset="onReset"
@@ -277,6 +280,8 @@
         <b-button type="submit" variant="primary">Generate And Print</b-button>
         <b-button type="reset" variant="danger">Reset</b-button>
       </b-form>
+      </div>
+
       <!-- <b-card class="mt-3" header="Form Data Result">
         <pre class="m-0">{{ form }}</pre>
       </b-card>-->

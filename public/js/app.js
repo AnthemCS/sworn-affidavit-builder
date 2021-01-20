@@ -79764,6 +79764,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
 
 
 
@@ -83381,654 +83386,667 @@ var render = function() {
       1
     ),
     _vm._v(" "),
-    _c(
-      "div",
-      { staticClass: "col-12 offset-md-1 col-md-3" },
-      [
-        _vm.show
-          ? _c(
-              "b-form",
-              {
-                attrs: { disabled: _vm.loading },
-                on: { submit: _vm.onSubmit, reset: _vm.onReset }
-              },
-              [
-                _c(
-                  "fieldset",
-                  [
-                    _c("legend", [
-                      _vm._v("Section A - Measure Enterprise/Business Entity")
-                    ]),
-                    _vm._v(" "),
-                    _c(
-                      "b-form-group",
-                      {
-                        attrs: {
-                          id: "date-issue",
-                          label: "1. Date of Issue:",
-                          "label-for": "date-issue"
-                        }
-                      },
-                      [
-                        _c("b-form-input", {
+    _c("div", { staticClass: "col-12 offset-md-1 col-md-3" }, [
+      _c(
+        "div",
+        [
+          _vm.show
+            ? _c(
+                "b-form",
+                {
+                  attrs: { disabled: _vm.loading },
+                  on: { submit: _vm.onSubmit, reset: _vm.onReset }
+                },
+                [
+                  _c(
+                    "fieldset",
+                    [
+                      _c("legend", [
+                        _vm._v("Section A - Measure Enterprise/Business Entity")
+                      ]),
+                      _vm._v(" "),
+                      _c(
+                        "b-form-group",
+                        {
                           attrs: {
                             id: "date-issue",
-                            type: "date",
-                            required: "",
-                            placeholder: "Select Issue Date"
-                          },
-                          model: {
-                            value: _vm.form.issueDate,
-                            callback: function($$v) {
-                              _vm.$set(_vm.form, "issueDate", $$v)
-                            },
-                            expression: "form.issueDate"
+                            label: "1. Date of Issue:",
+                            "label-for": "date-issue"
                           }
-                        })
-                      ],
-                      1
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "b-form-group",
-                      {
-                        attrs: {
-                          id: "enterprise-name",
-                          label: "2. Enterprise Name(Full Name): ",
-                          "label-for": "enterprise-name"
-                        }
-                      },
-                      [
-                        _c("b-form-input", {
+                        },
+                        [
+                          _c("b-form-input", {
+                            attrs: {
+                              id: "date-issue",
+                              type: "date",
+                              required: "",
+                              placeholder: "Select Issue Date"
+                            },
+                            model: {
+                              value: _vm.form.issueDate,
+                              callback: function($$v) {
+                                _vm.$set(_vm.form, "issueDate", $$v)
+                              },
+                              expression: "form.issueDate"
+                            }
+                          })
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "b-form-group",
+                        {
                           attrs: {
                             id: "enterprise-name",
-                            type: "text",
-                            required: "",
-                            placeholder: "Enter the name of the enterprise"
-                          },
-                          model: {
-                            value: _vm.form.enterpriseName,
-                            callback: function($$v) {
-                              _vm.$set(_vm.form, "enterpriseName", $$v)
-                            },
-                            expression: "form.enterpriseName"
+                            label: "2. Enterprise Name(Full Name): ",
+                            "label-for": "enterprise-name"
                           }
-                        })
-                      ],
-                      1
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "b-form-group",
-                      {
-                        attrs: {
-                          id: "trade-name",
-                          label: "3. Trade Name (If Applicable)",
-                          "label-for": "trade-name"
-                        }
-                      },
-                      [
-                        _c("b-form-input", {
+                        },
+                        [
+                          _c("b-form-input", {
+                            attrs: {
+                              id: "enterprise-name",
+                              type: "text",
+                              required: "",
+                              placeholder: "Enter the name of the enterprise"
+                            },
+                            model: {
+                              value: _vm.form.enterpriseName,
+                              callback: function($$v) {
+                                _vm.$set(_vm.form, "enterpriseName", $$v)
+                              },
+                              expression: "form.enterpriseName"
+                            }
+                          })
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "b-form-group",
+                        {
                           attrs: {
                             id: "trade-name",
-                            required: "",
-                            placeholder: "Enter the name of the trade"
-                          },
-                          model: {
-                            value: _vm.form.tradeName,
-                            callback: function($$v) {
-                              _vm.$set(_vm.form, "tradeName", $$v)
-                            },
-                            expression: "form.tradeName"
+                            label: "3. Trade Name (If Applicable)",
+                            "label-for": "trade-name"
                           }
-                        })
-                      ],
-                      1
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "b-form-group",
-                      {
-                        attrs: {
-                          id: "registration-number",
-                          label: "4. Registration Number:",
-                          "label-for": "registration-number"
-                        }
-                      },
-                      [
-                        _c("b-form-input", {
-                          attrs: { id: "registration-number", required: "" },
-                          model: {
-                            value: _vm.form.registrationNumber,
-                            callback: function($$v) {
-                              _vm.$set(_vm.form, "registrationNumber", $$v)
+                        },
+                        [
+                          _c("b-form-input", {
+                            attrs: {
+                              id: "trade-name",
+                              required: "",
+                              placeholder: "Enter the name of the trade"
                             },
-                            expression: "form.registrationNumber"
+                            model: {
+                              value: _vm.form.tradeName,
+                              callback: function($$v) {
+                                _vm.$set(_vm.form, "tradeName", $$v)
+                              },
+                              expression: "form.tradeName"
+                            }
+                          })
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "b-form-group",
+                        {
+                          attrs: {
+                            id: "registration-number",
+                            label: "4. Registration Number:",
+                            "label-for": "registration-number"
                           }
-                        })
-                      ],
-                      1
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "b-form-group",
-                      {
-                        attrs: {
-                          id: "entity-type",
-                          label: "5. Type of Entity (CC, PTY Ltd, etc)",
-                          "label-for": "entity-type"
-                        }
-                      },
-                      [
-                        _c("b-form-input", {
+                        },
+                        [
+                          _c("b-form-input", {
+                            attrs: { id: "registration-number", required: "" },
+                            model: {
+                              value: _vm.form.registrationNumber,
+                              callback: function($$v) {
+                                _vm.$set(_vm.form, "registrationNumber", $$v)
+                              },
+                              expression: "form.registrationNumber"
+                            }
+                          })
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "b-form-group",
+                        {
                           attrs: {
                             id: "entity-type",
-                            required: "",
-                            placeholder: "Enter the type of entity"
-                          },
-                          model: {
-                            value: _vm.form.entityType,
-                            callback: function($$v) {
-                              _vm.$set(_vm.form, "entityType", $$v)
-                            },
-                            expression: "form.entityType"
+                            label: "5. Type of Entity (CC, PTY Ltd, etc)",
+                            "label-for": "entity-type"
                           }
-                        })
-                      ],
-                      1
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "b-form-group",
-                      {
-                        attrs: {
-                          id: "physical-addr",
-                          label: "6. Physical Address",
-                          "label-for": "physical-addr"
-                        }
-                      },
-                      [
-                        _c("b-form-textarea", {
+                        },
+                        [
+                          _c("b-form-input", {
+                            attrs: {
+                              id: "entity-type",
+                              required: "",
+                              placeholder: "Enter the type of entity"
+                            },
+                            model: {
+                              value: _vm.form.entityType,
+                              callback: function($$v) {
+                                _vm.$set(_vm.form, "entityType", $$v)
+                              },
+                              expression: "form.entityType"
+                            }
+                          })
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "b-form-group",
+                        {
                           attrs: {
                             id: "physical-addr",
-                            required: "",
-                            placeholder: "Enter your physical address..."
-                          },
-                          model: {
-                            value: _vm.form.physicalAddress,
-                            callback: function($$v) {
-                              _vm.$set(_vm.form, "physicalAddress", $$v)
-                            },
-                            expression: "form.physicalAddress"
+                            label: "6. Physical Address",
+                            "label-for": "physical-addr"
                           }
-                        })
-                      ],
-                      1
-                    )
-                  ],
-                  1
-                ),
-                _vm._v(" "),
-                _c(
-                  "fieldset",
-                  [
-                    _c("legend", [_vm._v("Section B - Enterprise Ownership")]),
-                    _vm._v(" "),
-                    _c(
-                      "b-form-group",
-                      {
-                        attrs: {
-                          id: "black-owned-enterprise",
-                          label: "7. The % Black Owned Enterprise: ",
-                          "label-for": "black-owned-enterprise"
-                        }
-                      },
-                      [
-                        _c("b-form-input", {
+                        },
+                        [
+                          _c("b-form-textarea", {
+                            attrs: {
+                              id: "physical-addr",
+                              required: "",
+                              placeholder: "Enter your physical address..."
+                            },
+                            model: {
+                              value: _vm.form.physicalAddress,
+                              callback: function($$v) {
+                                _vm.$set(_vm.form, "physicalAddress", $$v)
+                              },
+                              expression: "form.physicalAddress"
+                            }
+                          })
+                        ],
+                        1
+                      )
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "fieldset",
+                    [
+                      _c("legend", [
+                        _vm._v("Section B - Enterprise Ownership")
+                      ]),
+                      _vm._v(" "),
+                      _c(
+                        "b-form-group",
+                        {
                           attrs: {
                             id: "black-owned-enterprise",
-                            type: "number",
-                            min: 0,
-                            max: 100,
-                            required: ""
-                          },
-                          model: {
-                            value: _vm.form.percentageBlackOwnedEnterprise,
-                            callback: function($$v) {
-                              _vm.$set(
-                                _vm.form,
-                                "percentageBlackOwnedEnterprise",
-                                $$v
-                              )
-                            },
-                            expression: "form.percentageBlackOwnedEnterprise"
+                            label: "7. The % Black Owned Enterprise: ",
+                            "label-for": "black-owned-enterprise"
                           }
-                        })
-                      ],
-                      1
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "b-form-group",
-                      {
-                        attrs: {
-                          id: "black-owned-female-enterprise",
-                          label: "8. The % Black Female Owned Enterprise is: ",
-                          "label-for": "black-owned-female-enterprise"
-                        }
-                      },
-                      [
-                        _c("b-form-input", {
+                        },
+                        [
+                          _c("b-form-input", {
+                            attrs: {
+                              id: "black-owned-enterprise",
+                              type: "number",
+                              min: 0,
+                              max: 100,
+                              required: ""
+                            },
+                            model: {
+                              value: _vm.form.percentageBlackOwnedEnterprise,
+                              callback: function($$v) {
+                                _vm.$set(
+                                  _vm.form,
+                                  "percentageBlackOwnedEnterprise",
+                                  $$v
+                                )
+                              },
+                              expression: "form.percentageBlackOwnedEnterprise"
+                            }
+                          })
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "b-form-group",
+                        {
                           attrs: {
                             id: "black-owned-female-enterprise",
-                            type: "number",
-                            min: 0,
-                            max: 100,
-                            required: ""
-                          },
-                          model: {
-                            value:
-                              _vm.form.percentageBlackFemaleOwnedEnterprise,
-                            callback: function($$v) {
-                              _vm.$set(
-                                _vm.form,
-                                "percentageBlackFemaleOwnedEnterprise",
-                                $$v
-                              )
-                            },
-                            expression:
-                              "form.percentageBlackFemaleOwnedEnterprise"
+                            label:
+                              "8. The % Black Female Owned Enterprise is: ",
+                            "label-for": "black-owned-female-enterprise"
                           }
-                        })
-                      ],
-                      1
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "b-form-group",
-                      {
-                        attrs: {
-                          id: "black-owned-designated-enterprise",
-                          label:
-                            "9. The % Black Designated Group Owned Enterprise is: ",
-                          "label-for": "black-owned-designated-enterprise"
-                        }
-                      },
-                      [
-                        _c("b-form-input", {
+                        },
+                        [
+                          _c("b-form-input", {
+                            attrs: {
+                              id: "black-owned-female-enterprise",
+                              type: "number",
+                              min: 0,
+                              max: 100,
+                              required: ""
+                            },
+                            model: {
+                              value:
+                                _vm.form.percentageBlackFemaleOwnedEnterprise,
+                              callback: function($$v) {
+                                _vm.$set(
+                                  _vm.form,
+                                  "percentageBlackFemaleOwnedEnterprise",
+                                  $$v
+                                )
+                              },
+                              expression:
+                                "form.percentageBlackFemaleOwnedEnterprise"
+                            }
+                          })
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "b-form-group",
+                        {
                           attrs: {
                             id: "black-owned-designated-enterprise",
-                            type: "number",
-                            min: 0,
-                            max: 100,
-                            required: ""
-                          },
-                          model: {
-                            value:
-                              _vm.form.percentageBlackDesignatedGroupEnterprise,
-                            callback: function($$v) {
-                              _vm.$set(
-                                _vm.form,
-                                "percentageBlackDesignatedGroupEnterprise",
-                                $$v
-                              )
-                            },
-                            expression:
-                              "form.percentageBlackDesignatedGroupEnterprise"
+                            label:
+                              "9. The % Black Designated Group Owned Enterprise is: ",
+                            "label-for": "black-owned-designated-enterprise"
                           }
-                        })
-                      ],
-                      1
-                    )
-                  ],
-                  1
-                ),
-                _vm._v(" "),
-                _c(
-                  "fieldset",
-                  [
-                    _c("legend", [
-                      _vm._v("Section C - Group Enterprise Ownership")
-                    ]),
-                    _vm._v(" "),
-                    _c(
-                      "b-form-group",
-                      {
-                        attrs: {
-                          id: "black-owned-youth",
-                          label: "10. The % Black Youth is: ",
-                          "label-for": "black-owned-youth"
-                        }
-                      },
-                      [
-                        _c("b-form-input", {
+                        },
+                        [
+                          _c("b-form-input", {
+                            attrs: {
+                              id: "black-owned-designated-enterprise",
+                              type: "number",
+                              min: 0,
+                              max: 100,
+                              required: ""
+                            },
+                            model: {
+                              value:
+                                _vm.form
+                                  .percentageBlackDesignatedGroupEnterprise,
+                              callback: function($$v) {
+                                _vm.$set(
+                                  _vm.form,
+                                  "percentageBlackDesignatedGroupEnterprise",
+                                  $$v
+                                )
+                              },
+                              expression:
+                                "form.percentageBlackDesignatedGroupEnterprise"
+                            }
+                          })
+                        ],
+                        1
+                      )
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "fieldset",
+                    [
+                      _c("legend", [
+                        _vm._v("Section C - Group Enterprise Ownership")
+                      ]),
+                      _vm._v(" "),
+                      _c(
+                        "b-form-group",
+                        {
                           attrs: {
                             id: "black-owned-youth",
-                            type: "number",
-                            min: 0,
-                            max: 100,
-                            required: ""
-                          },
-                          model: {
-                            value: _vm.form.percentageBlackYouth,
-                            callback: function($$v) {
-                              _vm.$set(_vm.form, "percentageBlackYouth", $$v)
-                            },
-                            expression: "form.percentageBlackYouth"
+                            label: "10. The % Black Youth is: ",
+                            "label-for": "black-owned-youth"
                           }
-                        })
-                      ],
-                      1
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "b-form-group",
-                      {
-                        attrs: {
-                          id: "black-owned-youth",
-                          label: "11. The % Black Youth is: ",
-                          "label-for": "black-owned-youth"
-                        }
-                      },
-                      [
-                        _c("b-form-input", {
+                        },
+                        [
+                          _c("b-form-input", {
+                            attrs: {
+                              id: "black-owned-youth",
+                              type: "number",
+                              min: 0,
+                              max: 100,
+                              required: ""
+                            },
+                            model: {
+                              value: _vm.form.percentageBlackYouth,
+                              callback: function($$v) {
+                                _vm.$set(_vm.form, "percentageBlackYouth", $$v)
+                              },
+                              expression: "form.percentageBlackYouth"
+                            }
+                          })
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "b-form-group",
+                        {
                           attrs: {
                             id: "black-owned-youth",
-                            type: "number",
-                            min: 0,
-                            max: 100,
-                            required: ""
-                          },
-                          model: {
-                            value: _vm.form.percentageBlackYouth,
-                            callback: function($$v) {
-                              _vm.$set(_vm.form, "percentageBlackYouth", $$v)
-                            },
-                            expression: "form.percentageBlackYouth"
+                            label: "11. The % Black Youth is: ",
+                            "label-for": "black-owned-youth"
                           }
-                        })
-                      ],
-                      1
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "b-form-group",
-                      {
-                        attrs: {
-                          id: "black-owned-disabled",
-                          label: "11. The % Black Disabled is: ",
-                          "label-for": "black-owned-disabled"
-                        }
-                      },
-                      [
-                        _c("b-form-input", {
+                        },
+                        [
+                          _c("b-form-input", {
+                            attrs: {
+                              id: "black-owned-youth",
+                              type: "number",
+                              min: 0,
+                              max: 100,
+                              required: ""
+                            },
+                            model: {
+                              value: _vm.form.percentageBlackYouth,
+                              callback: function($$v) {
+                                _vm.$set(_vm.form, "percentageBlackYouth", $$v)
+                              },
+                              expression: "form.percentageBlackYouth"
+                            }
+                          })
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "b-form-group",
+                        {
                           attrs: {
                             id: "black-owned-disabled",
-                            type: "number",
-                            min: 0,
-                            max: 100,
-                            required: ""
-                          },
-                          model: {
-                            value: _vm.form.percentageBlackDisabled,
-                            callback: function($$v) {
-                              _vm.$set(_vm.form, "percentageBlackDisabled", $$v)
-                            },
-                            expression: "form.percentageBlackDisabled"
+                            label: "11. The % Black Disabled is: ",
+                            "label-for": "black-owned-disabled"
                           }
-                        })
-                      ],
-                      1
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "b-form-group",
-                      {
-                        attrs: {
-                          id: "black-owned-unemployed",
-                          label: "12. The % Black Unemployed is: ",
-                          "label-for": "black-owned-unemployed"
-                        }
-                      },
-                      [
-                        _c("b-form-input", {
+                        },
+                        [
+                          _c("b-form-input", {
+                            attrs: {
+                              id: "black-owned-disabled",
+                              type: "number",
+                              min: 0,
+                              max: 100,
+                              required: ""
+                            },
+                            model: {
+                              value: _vm.form.percentageBlackDisabled,
+                              callback: function($$v) {
+                                _vm.$set(
+                                  _vm.form,
+                                  "percentageBlackDisabled",
+                                  $$v
+                                )
+                              },
+                              expression: "form.percentageBlackDisabled"
+                            }
+                          })
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "b-form-group",
+                        {
                           attrs: {
                             id: "black-owned-unemployed",
-                            type: "number",
-                            min: 0,
-                            max: 100,
-                            required: ""
-                          },
-                          model: {
-                            value: _vm.form.percentageBlackUnemployed,
-                            callback: function($$v) {
-                              _vm.$set(
-                                _vm.form,
-                                "percentageBlackUnemployed",
-                                $$v
-                              )
-                            },
-                            expression: "form.percentageBlackUnemployed"
+                            label: "12. The % Black Unemployed is: ",
+                            "label-for": "black-owned-unemployed"
                           }
-                        })
-                      ],
-                      1
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "b-form-group",
-                      {
-                        attrs: {
-                          id: "black-owned-rural-areas",
-                          label:
-                            "13. The % Black People living in Rural areas  is: ",
-                          "label-for": "black-owned-rural-areas"
-                        }
-                      },
-                      [
-                        _c("b-form-input", {
+                        },
+                        [
+                          _c("b-form-input", {
+                            attrs: {
+                              id: "black-owned-unemployed",
+                              type: "number",
+                              min: 0,
+                              max: 100,
+                              required: ""
+                            },
+                            model: {
+                              value: _vm.form.percentageBlackUnemployed,
+                              callback: function($$v) {
+                                _vm.$set(
+                                  _vm.form,
+                                  "percentageBlackUnemployed",
+                                  $$v
+                                )
+                              },
+                              expression: "form.percentageBlackUnemployed"
+                            }
+                          })
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "b-form-group",
+                        {
                           attrs: {
                             id: "black-owned-rural-areas",
-                            type: "number",
-                            min: 0,
-                            max: 100,
-                            required: ""
-                          },
-                          model: {
-                            value: _vm.form.percentageBlackRuralAreas,
-                            callback: function($$v) {
-                              _vm.$set(
-                                _vm.form,
-                                "percentageBlackRuralAreas",
-                                $$v
-                              )
-                            },
-                            expression: "form.percentageBlackRuralAreas"
+                            label:
+                              "13. The % Black People living in Rural areas  is: ",
+                            "label-for": "black-owned-rural-areas"
                           }
-                        })
-                      ],
-                      1
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "b-form-group",
-                      {
-                        attrs: {
-                          id: "black-owned-military-veterans",
-                          label: "14. The % Black Military Veterans is: ",
-                          "label-for": "black-owned-rural-areas"
-                        }
-                      },
-                      [
-                        _c("b-form-input", {
+                        },
+                        [
+                          _c("b-form-input", {
+                            attrs: {
+                              id: "black-owned-rural-areas",
+                              type: "number",
+                              min: 0,
+                              max: 100,
+                              required: ""
+                            },
+                            model: {
+                              value: _vm.form.percentageBlackRuralAreas,
+                              callback: function($$v) {
+                                _vm.$set(
+                                  _vm.form,
+                                  "percentageBlackRuralAreas",
+                                  $$v
+                                )
+                              },
+                              expression: "form.percentageBlackRuralAreas"
+                            }
+                          })
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "b-form-group",
+                        {
                           attrs: {
                             id: "black-owned-military-veterans",
-                            type: "number",
-                            min: 0,
-                            max: 100,
-                            required: ""
-                          },
-                          model: {
-                            value: _vm.form.percentageBlackMilitaryVeterans,
-                            callback: function($$v) {
-                              _vm.$set(
-                                _vm.form,
-                                "percentageBlackMilitaryVeterans",
-                                $$v
-                              )
-                            },
-                            expression: "form.percentageBlackMilitaryVeterans"
+                            label: "14. The % Black Military Veterans is: ",
+                            "label-for": "black-owned-rural-areas"
                           }
-                        })
-                      ],
-                      1
-                    )
-                  ],
-                  1
-                ),
-                _vm._v(" "),
-                _c(
-                  "fieldset",
-                  [
-                    _c("legend", [_vm._v("Section D - Financial Statments")]),
-                    _vm._v(" "),
-                    _c(
-                      "b-form-group",
-                      {
-                        attrs: {
-                          id: "financial-year-end",
-                          label:
-                            "15. Based on the Financial Statements/Management Accounts and other\n      information available on the latest financial year-end",
-                          "label-for": "financial-year-end"
-                        }
-                      },
-                      [
-                        _c("b-form-input", {
+                        },
+                        [
+                          _c("b-form-input", {
+                            attrs: {
+                              id: "black-owned-military-veterans",
+                              type: "number",
+                              min: 0,
+                              max: 100,
+                              required: ""
+                            },
+                            model: {
+                              value: _vm.form.percentageBlackMilitaryVeterans,
+                              callback: function($$v) {
+                                _vm.$set(
+                                  _vm.form,
+                                  "percentageBlackMilitaryVeterans",
+                                  $$v
+                                )
+                              },
+                              expression: "form.percentageBlackMilitaryVeterans"
+                            }
+                          })
+                        ],
+                        1
+                      )
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "fieldset",
+                    [
+                      _c("legend", [_vm._v("Section D - Financial Statments")]),
+                      _vm._v(" "),
+                      _c(
+                        "b-form-group",
+                        {
                           attrs: {
                             id: "financial-year-end",
-                            type: "number",
-                            min: 0,
-                            required: ""
-                          },
-                          model: {
-                            value: _vm.form.financialYearEndAmount,
-                            callback: function($$v) {
-                              _vm.$set(_vm.form, "financialYearEndAmount", $$v)
-                            },
-                            expression: "form.financialYearEndAmount"
+                            label:
+                              "15. Based on the Financial Statements/Management Accounts and other\n      information available on the latest financial year-end",
+                            "label-for": "financial-year-end"
                           }
-                        })
-                      ],
-                      1
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "b-form-group",
-                      [
-                        _c("b-form-radio-group", {
+                        },
+                        [
+                          _c("b-form-input", {
+                            attrs: {
+                              id: "financial-year-end",
+                              type: "number",
+                              min: 0,
+                              required: ""
+                            },
+                            model: {
+                              value: _vm.form.financialYearEndAmount,
+                              callback: function($$v) {
+                                _vm.$set(
+                                  _vm.form,
+                                  "financialYearEndAmount",
+                                  $$v
+                                )
+                              },
+                              expression: "form.financialYearEndAmount"
+                            }
+                          })
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "b-form-group",
+                        [
+                          _c("b-form-radio-group", {
+                            attrs: {
+                              options: _vm.form.ownerShipOptions,
+                              name: "radio-inline",
+                              stacked: ""
+                            },
+                            model: {
+                              value: _vm.form.enterpriseOwnership,
+                              callback: function($$v) {
+                                _vm.$set(_vm.form, "enterpriseOwnership", $$v)
+                              },
+                              expression: "form.enterpriseOwnership"
+                            }
+                          })
+                        ],
+                        1
+                      )
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "fieldset",
+                    [
+                      _c("legend", [_vm._v("Section E - Consent")]),
+                      _vm._v(" "),
+                      _c(
+                        "b-form-group",
+                        {
                           attrs: {
-                            options: _vm.form.ownerShipOptions,
-                            name: "radio-inline",
-                            stacked: ""
-                          },
-                          model: {
-                            value: _vm.form.enterpriseOwnership,
-                            callback: function($$v) {
-                              _vm.$set(_vm.form, "enterpriseOwnership", $$v)
-                            },
-                            expression: "form.enterpriseOwnership"
+                            id: "consent-name",
+                            label: "16. Name and Surname",
+                            "label-for": "consent-name"
                           }
-                        })
-                      ],
-                      1
-                    )
-                  ],
-                  1
-                ),
-                _vm._v(" "),
-                _c(
-                  "fieldset",
-                  [
-                    _c("legend", [_vm._v("Section E - Consent")]),
-                    _vm._v(" "),
-                    _c(
-                      "b-form-group",
-                      {
-                        attrs: {
-                          id: "consent-name",
-                          label: "16. Name and Surname",
-                          "label-for": "consent-name"
-                        }
-                      },
-                      [
-                        _c("b-form-input", {
+                        },
+                        [
+                          _c("b-form-input", {
+                            attrs: {
+                              id: "trade-name",
+                              required: "",
+                              placeholder:
+                                "Enter a fullname with name and surname"
+                            },
+                            model: {
+                              value: _vm.form.consentFullName,
+                              callback: function($$v) {
+                                _vm.$set(_vm.form, "consentFullName", $$v)
+                              },
+                              expression: "form.consentFullName"
+                            }
+                          })
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "b-form-group",
+                        {
                           attrs: {
-                            id: "trade-name",
-                            required: "",
-                            placeholder:
-                              "Enter a fullname with name and surname"
-                          },
-                          model: {
-                            value: _vm.form.consentFullName,
-                            callback: function($$v) {
-                              _vm.$set(_vm.form, "consentFullName", $$v)
-                            },
-                            expression: "form.consentFullName"
+                            id: "consent-idnumber",
+                            label: "17. ID Number",
+                            "label-for": "consent-idnumber"
                           }
-                        })
-                      ],
-                      1
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "b-form-group",
-                      {
-                        attrs: {
-                          id: "consent-idnumber",
-                          label: "17. ID Number",
-                          "label-for": "consent-idnumber"
-                        }
-                      },
-                      [
-                        _c("b-form-input", {
-                          attrs: {
-                            id: "trade-name",
-                            required: "",
-                            placeholder: "Enter a valid ID Number"
-                          },
-                          model: {
-                            value: _vm.form.consentIdNumber,
-                            callback: function($$v) {
-                              _vm.$set(_vm.form, "consentIdNumber", $$v)
+                        },
+                        [
+                          _c("b-form-input", {
+                            attrs: {
+                              id: "trade-name",
+                              required: "",
+                              placeholder: "Enter a valid ID Number"
                             },
-                            expression: "form.consentIdNumber"
-                          }
-                        })
-                      ],
-                      1
-                    )
-                  ],
-                  1
-                ),
-                _vm._v(" "),
-                _c(
-                  "b-button",
-                  { attrs: { type: "submit", variant: "primary" } },
-                  [_vm._v("Generate And Print")]
-                ),
-                _vm._v(" "),
-                _c(
-                  "b-button",
-                  { attrs: { type: "reset", variant: "danger" } },
-                  [_vm._v("Reset")]
-                )
-              ],
-              1
-            )
-          : _vm._e()
-      ],
-      1
-    )
+                            model: {
+                              value: _vm.form.consentIdNumber,
+                              callback: function($$v) {
+                                _vm.$set(_vm.form, "consentIdNumber", $$v)
+                              },
+                              expression: "form.consentIdNumber"
+                            }
+                          })
+                        ],
+                        1
+                      )
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "b-button",
+                    { attrs: { type: "submit", variant: "primary" } },
+                    [_vm._v("Generate And Print")]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "b-button",
+                    { attrs: { type: "reset", variant: "danger" } },
+                    [_vm._v("Reset")]
+                  )
+                ],
+                1
+              )
+            : _vm._e()
+        ],
+        1
+      )
+    ])
   ])
 }
 var staticRenderFns = []
